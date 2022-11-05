@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Питомец</title>
+    <link rel="stylesheet" href="../css/style.css"> </head>
+
+<body>
+   <div id="pet-profile-photo-container">
+       <img src="../resourse/shake.jpg" alt="Фото питомца" id="pet-profile-photo">
+   </div>
+    <div class="header header-pet-profile">
+        <a href="#" class="button-back button-back-pet-profile"> <img src="../resourse/back-brown.svg" alt="Назад" class="back"></a>
+    </div>
+    <div id="pet-profile-panel">
+        <div id="pet-profile-panel-header">
+            <div class="pet-profile-panel-header-line"> <span id="pet-name">Имя питомца</span>
+                <div id="pet-profile-panel-header-buttons">
+                    <button class="pet-profile-panel-header-button" onclick="show_pet_reg_panel()"><img src="../resourse/edit.svg" alt="Редактировать" class="pet-profile-panel-header-button-img"></button>
+                    <button class="pet-profile-panel-header-button"><img src="../resourse/share.svg" alt="Поделиться" class="pet-profile-panel-header-button-img"></button>
+                </div>
+            </div>
+            <div class="pet-profile-panel-header-line">
+                <span class="pet-profile-info" id="pet-breed">Порода питомца</span>
+            </div>
+            <div class="pet-profile-panel-header-line">
+                <span class="pet-profile-info" id="pet-birth">01.02.2003</span>
+            </div>
+        </div>
+        <div class="pet-profile-attributes-conteiner">
+            <div class="pet-profile-attribute-conteiner" id="pet-attribute-block-weight">
+                <div class="pet-profile-attribute-value-area">
+                    <span id="pet-weight">75</span>
+                </div>
+                <div class="pet-profile-attribute-name-area">
+                    <span>кг</span>
+                </div>
+            </div>
+            <div class="pet-profile-attribute-conteiner" id="pet-attribute-block-gender">
+                <div class="pet-profile-attribute-value-area">
+                    <img src="../resourse/man.svg" alt="Мальчик" id="pet-gender-img">
+                </div>
+                <div class="pet-profile-attribute-name-area">
+                    <span id="pet-gender-value">мальчик</span>
+                </div>
+            </div>
+            <div class="pet-profile-attribute-conteiner" id="pet-attribute-block-age">
+                <div class="pet-profile-attribute-value-area">
+                    <span id="pet-age">11</span>
+                </div>
+                <div class="pet-profile-attribute-name-area">
+                    <span>месяцев</span>
+                </div>
+            </div>
+        </div>
+        <a class="width-account-block-link" href="#">
+            <div class="width-account-block">
+                <img src="../resourse/passport.svg" alt="Паспорт" class="width-account-block-img">
+                <div class="width-account-block-text">Открыть паспорт</div>
+                <img src="../resourse/" alt="">
+            </div>
+        </a>
+        <div class="pet-profile-attributes-conteiner">
+            <a href="#">
+                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links">
+                    <div class="pet-profile-attribute-value-area">
+                        <img src="../resourse/medical-info.svg" alt="Медицинская информация">
+                    </div>
+                    <div class="pet-profile-attribute-name-area">
+                        <span>Медицинская<br>информация</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links">
+                    <div class="pet-profile-attribute-value-area">
+                        <img src="../resourse/food.svg" alt="Еда">
+                    </div>
+                    <div class="pet-profile-attribute-name-area">
+                        <span id="pet-gender-value">Еда</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links">
+                    <div class="pet-profile-attribute-value-area">
+                        <img src="../resourse/advices-button.svg" alt="Уход">
+                    </div>
+                    <div class="pet-profile-attribute-name-area">
+                        <span id="pet-gender-value">Советы<br>по уходу</span>
+                    </div>
+                </div>
+            </a>
+        </div>    
+    </div>
+    
+    <div class="dark">
+        <div class="pet-reg">
+            <button onclick="hide_pet_reg_panel()" class="close-reg"> <img src="../resourse/arrow.svg" alt="Назад" class="back"> </button> 
+            <span class="pet-reg-title">РЕДАКТИРОВАНИЕ ПИТОМЦА</span>
+            <div class="reg-pet-form">
+                <div class="reg-form-line">
+                    <label class="get-photo">
+		   	            <input type="file" name="file[]" multiple accept="image/*">		
+		   	            <div class="get-photo-block"> 
+                           <img src="../resourse/camera.svg" alt="Загрузить изображение"> 
+                        </div>
+ 		            </label>
+                    <div class="pet-reg-name-block">
+                        <input type="text" class="pet-reg-input-name" placeholder="Имя питомца"> 
+                    </div>
+                </div>
+                <div class="reg-form-line"> 
+                    <img src="../resourse/birth.svg" alt="Дата рождения" class="reg-emoji">
+                    <input placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date pet-reg-input reg-form-input"> 
+                </div>
+                <div class="reg-form-line"> 
+                    <img src="../resourse/dog.svg" alt="Дата рождения" class="reg-emoji">
+                    <select name="breed" class="reg-form-input">
+                        <option selected hidden>Выберите породу</option>
+                        <option value="s1">Порода 1</option>
+                        <option value="s2">Порода 2</option>
+                        <option value="s3">Порода 3</option>
+                        <option value="s3">Порода 4</option>
+                    </select>
+                </div>
+                <div class="reg-form-line"> 
+                    <img src="../resourse/scales.svg" alt="Масса" class="reg-emoji">
+                    <input placeholder="Масса питомца" type="text" class="pet-reg-input reg-form-input"> 
+                </div>
+                <div class="reg-form-line"> 
+                   <img src="../resourse/gender.svg" alt="Пол питомца" class="reg-emoji">
+                    <select name="gender" class="reg-form-input">
+                        <option selected hidden>Выберите пол</option>
+                        <option value="s1">Мужской</option>
+                        <option value="s2">Женский</option>
+                    </select>
+                </div>
+                <div class="reg-form-line"> 
+                   <img src="../resourse/docs.svg" alt="Масса" class="reg-emoji">
+                    <button class="button-pet-reg-docs">
+                        <div class="pet-reg-input-docs"> 
+                            <span class="plus">+</span> 
+                        </div>
+                    </button>
+                    <div class="docs-flag-area">Документы не загружены</div>
+                </div>
+                <div class="reg-form-line">
+                    <button class="width-button button-reg-pet">
+                            Сохранить изменения
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <script src="../js/pet-edit.js"></script>
+</body>
+
+</html>

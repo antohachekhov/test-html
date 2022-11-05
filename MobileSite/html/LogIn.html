@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../css/style.css"> </head>
+
+<body style="background-color: #43210D">
+    <div class="header header-back-title">
+        <a href="../index.html" class="button-back"> <img src="../resourse/back-orange.svg" alt="Назад" class="back"></a> <span class="title title-center" style="color: white">РЕГИСТРАЦИЯ</span> </div>
+    <div class="content">
+        <div class="reg-form">
+            <div class="reg-form-line login-form"> <img src="../resourse/human.svg" alt="Имя Фамилия" class="reg-emoji">
+                <input placeholder="Имя Фамилия" type="text" class="reg-form-input"> </div>
+            <div class="reg-form-line login-form"> <img src="../resourse/login.svg" alt="Логин" class="reg-emoji">
+                <input placeholder="Никнейм" type="text" class="reg-form-input"> </div>
+            <div class="reg-form-line login-form"> <img src="../resourse/e-mail.svg" alt="Почта" class="reg-emoji">
+                <input placeholder="E-mail" type="text" class="reg-form-input"> </div>
+            <div class="reg-form-line login-form"> <img src="../resourse/birth.svg" alt="Дата рождения" class="reg-emoji">
+                <input placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date reg-form-input"> </div>
+            <div class="reg-form-line login-form"> <img src="../resourse/phone.svg" alt="Телефон" class="reg-emoji">
+                <input placeholder="Номер телефона" type="text" class="reg-form-input"> </div>
+            <div class="reg-form-line login-form"> <img src="../resourse/key.svg" alt="Пароль" class="reg-emoji">
+                <input placeholder="Пароль" type="text" class="reg-form-input"> </div>
+            <div class="reg-form-line login-form">
+                <div class='toggle-switch-conteiner'>
+                    <label class="switch">
+                        <input type="checkbox" class="reg-form-checkbox"> <span class="slider round"></span> </label>
+                </div>
+                <div class="reg-form-acceptance"><span class="reg-form-acceptance-p1">Я согласен(согласна) с </span><a href="#" class="reg-form-acceptance-p2">пользовательским соглашением</a></div>
+            </div>
+            <div class="reg-form-line">
+                <button class="width-button reg-form-button"> Зарегистрироватьcя </button>
+            </div>
+            <div class="pet-form-line"></div>
+        </div>
+    </div>
+</body>
+
+</html>
