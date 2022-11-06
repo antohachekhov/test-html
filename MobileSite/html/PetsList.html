@@ -4,26 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Список</title>
-    <link rel="stylesheet" href="../css/style.css"> </head>
-    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+    <link rel="manifest" href="../icon/site.webmanifest"> </head>
+
 <body style="background-color: while">
-   
     <div class="header header-search">
-            <a href="./Account.html" class="button-back"> <img src="../resourse/back.svg" alt="Назад" class="back"> </a>
-            <div class="title">СПИСОК ПИТОМЦЕВ</div>
-           <!--
+        <a href="./Account.html" class="button-back"> <img src="../resourse/back.svg" alt="Назад" class="back"> </a>
+        <div class="title">СПИСОК ПИТОМЦЕВ</div>
+        <!--
             <div class="region-search"> 
                <img src="../resourse/search.svg" alt="" class="img-search">
                 <input type="text" class="input-search" placeholder="Поиск"> </div>
             <button class="button-filter"> <img src="../resourse/filter.svg" alt="Фильтр поиска" class="filter"> </button>
-            -->
-    </div>
+            --></div>
     <div class="content">
-        
         <div class="list-pets">
             <div class="list-item">
                 <a href="#" class="to-pet-profile">
-                    <div class="pet-card"> <img src="../resourse/pet.jpg" alt="" class="card-image">
+                    <div class="card"> <img src="../resourse/pet.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Никитка</div>
                             <div class="pet-card-description">
@@ -42,7 +43,7 @@
             </div>
             <div class="list-item">
                 <a href="#" class="to-pet-profile">
-                    <div class="pet-card"> <img src="../resourse/pet3.jpg" alt="" class="card-image">
+                    <div class="card"> <img src="../resourse/pet3.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Сашуля</div>
                             <div class="pet-card-description">
@@ -61,7 +62,7 @@
             </div>
             <div class="list-item">
                 <a href="#" class="to-pet-profile">
-                    <div class="pet-card"> <img src="../resourse/pet4.jpg" alt="" class="card-image">
+                    <div class="card"> <img src="../resourse/pet4.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Ирочка</div>
                             <div class="pet-card-description">
@@ -80,7 +81,7 @@
             </div>
             <div class="list-item">
                 <a href="#" class="to-pet-profile">
-                    <div class="pet-card"> <img src="../resourse/pet5.jpg" alt="" class="card-image">
+                    <div class="card"> <img src="../resourse/pet5.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Серёженька</div>
                             <div class="pet-card-description">
@@ -99,29 +100,23 @@
             </div>
         </div>
         <button onclick="show_pet_reg_panel()" class="button-new-pet">
-                <div class="width-button"> <span class="plus">+</span> </div>
+            <div class="width-button"> <span class="plus">+</span> </div>
         </button>
         <div class="dark">
-           <div class="pet-reg">
-                <button onclick="hide_pet_reg_panel()" class="close-reg"> <img src="../resourse/arrow.svg" alt="Назад" class="back"> </button> 
-                <span class="pet-reg-title">РЕГИСТРАЦИЯ ПИТОМЦА</span>
+            <div class="pet-reg">
+                <button onclick="hide_pet_reg_panel()" class="close-reg"> <img src="../resourse/arrow.svg" alt="Назад" class="back"> </button> <span class="pet-reg-title">РЕГИСТРАЦИЯ ПИТОМЦА</span>
                 <div class="reg-pet-form">
                     <div class="reg-form-line">
                         <label class="get-photo">
-		   	            <input type="file" name="file[]" multiple accept="image/*">		
-		   	            <div class="get-photo-block"> 
-                           <img src="../resourse/camera.svg" alt="Загрузить изображение"> 
-                        </div>
- 		            </label>
+                            <input type="file" name="file[]" multiple accept="image/*">
+                            <div class="get-photo-block"> <img src="../resourse/camera.svg" alt="Загрузить изображение"> </div>
+                        </label>
                         <div class="pet-reg-name-block">
                             <input type="text" class="pet-reg-input-name" placeholder="Имя питомца"> </div>
                     </div>
-                    <div class="reg-form-line"> 
-                       <img src="../resourse/birth.svg" alt="Дата рождения" class="reg-emoji">
-                        <input placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date reg-form-input"> 
-                    </div>
-                    <div class="reg-form-line"> 
-                       <img src="../resourse/dog.svg" alt="Дата рождения" class="reg-emoji">
+                    <div class="reg-form-line"> <img src="../resourse/birth.svg" alt="Дата рождения" class="reg-emoji">
+                        <input placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date reg-form-input"> </div>
+                    <div class="reg-form-line"> <img src="../resourse/dog.svg" alt="Дата рождения" class="reg-emoji">
                         <select name="breed" class="reg-form-input">
                             <option selected hidden>Выберите породу</option>
                             <option value="s1">Порода 1</option>
@@ -130,12 +125,9 @@
                             <option value="s3">Порода 4</option>
                         </select>
                     </div>
-                    <div class="reg-form-line"> 
-                       <img src="../resourse/scales.svg" alt="Масса" class="reg-emoji">
-                        <input placeholder="Масса питомца" type="text" class="reg-form-input"> 
-                    </div>
-                    <div class="reg-form-line"> 
-                       <img src="../resourse/gender.svg" alt="Пол питомца" class="reg-emoji">
+                    <div class="reg-form-line"> <img src="../resourse/scales.svg" alt="Масса" class="reg-emoji">
+                        <input placeholder="Масса питомца" type="text" class="reg-form-input"> </div>
+                    <div class="reg-form-line"> <img src="../resourse/gender.svg" alt="Пол питомца" class="reg-emoji">
                         <select name="gender" class="reg-form-input">
                             <option selected hidden>Выберите пол</option>
                             <option value="s1">Мужской</option>
@@ -146,19 +138,15 @@
                         <button class="button-pet-reg-docs">
                             <div class="pet-reg-input-docs"> <span class="plus">+</span> </div>
                         </button>
-                        <div class="docs-flag-area">Документы не загружены</div>
+                        <div class="docs-flag-area">Паспорт питомца</div>
                     </div>
                     <div class="reg-form-line">
-                        <button class="width-button button-reg-pet">
-                            Зарегистрировать питомца
-                        </button>
+                        <button class="width-button button-reg-pet"> Зарегистрировать питомца </button>
                     </div>
                 </div>
             </div>
         </div>
-         
     </div>
-    
     <script src="../js/pet-reg.js"></script>
 </body>
 

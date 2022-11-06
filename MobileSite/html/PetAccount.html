@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Питомец</title>
-    <link rel="stylesheet" href="../css/style.css"> </head>
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+    <link rel="manifest" href="../icon/site.webmanifest">
 
+</head>
 <body>
    <div id="pet-profile-photo-container">
-       <img src="../resourse/shake.jpg" alt="Фото питомца" id="pet-profile-photo">
+       <img src="../resourse/shark.jpg" alt="Фото питомца" id="pet-profile-photo">
    </div>
     <div class="header header-pet-profile">
-        <a href="#" class="button-back button-back-pet-profile"> <img src="../resourse/back-brown.svg" alt="Назад" class="back"></a>
+        <a href="./Account.html" class="button-back button-back-pet-profile"> <img src="../resourse/back-brown.svg" alt="Назад" class="back"></a>
     </div>
     <div id="pet-profile-panel">
         <div id="pet-profile-panel-header">
@@ -104,47 +110,47 @@
                     <label class="get-photo">
 		   	            <input type="file" name="file[]" multiple accept="image/*">		
 		   	            <div class="get-photo-block"> 
-                           <img src="../resourse/camera.svg" alt="Загрузить изображение"> 
+                           <img src="../resourse/shark.jpg" alt="Загрузить изображение" id="pet-form-uploaded-photo"> 
                         </div>
  		            </label>
                     <div class="pet-reg-name-block">
-                        <input type="text" class="pet-reg-input-name" placeholder="Имя питомца"> 
+                        <input type="text" class="pet-reg-input-name" placeholder="Акула из Икеа"> 
                     </div>
                 </div>
                 <div class="reg-form-line"> 
                     <img src="../resourse/birth.svg" alt="Дата рождения" class="reg-emoji">
-                    <input placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date pet-reg-input reg-form-input"> 
+                    <input placeholder="01.02.2003" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date pet-reg-input reg-form-input"> 
                 </div>
                 <div class="reg-form-line"> 
-                    <img src="../resourse/dog.svg" alt="Дата рождения" class="reg-emoji">
+                    <img src="../resourse/dog.svg" alt="Порода" class="reg-emoji">
                     <select name="breed" class="reg-form-input">
-                        <option selected hidden>Выберите породу</option>
-                        <option value="s1">Порода 1</option>
-                        <option value="s2">Порода 2</option>
-                        <option value="s3">Порода 3</option>
-                        <option value="s3">Порода 4</option>
+                        <option value="s1" selected>Акула Поролоновая</option>
+                        <option value="s2">Акула Настоящая</option>
+                        <option value="s3">Акула Человекоедящая</option>
+                        <option value="s4">Акула Акульная</option>
+                        <option value="s5">Акула Рыбная</option>
                     </select>
                 </div>
                 <div class="reg-form-line"> 
                     <img src="../resourse/scales.svg" alt="Масса" class="reg-emoji">
-                    <input placeholder="Масса питомца" type="text" class="pet-reg-input reg-form-input"> 
+                    <input placeholder="75 кг" type="text" class="pet-reg-input reg-form-input" id="pet-form-uploaded-weight"> 
                 </div>
                 <div class="reg-form-line"> 
                    <img src="../resourse/gender.svg" alt="Пол питомца" class="reg-emoji">
                     <select name="gender" class="reg-form-input">
-                        <option selected hidden>Выберите пол</option>
-                        <option value="s1">Мужской</option>
+                        <option value="s1" selected>Мужской</option>
                         <option value="s2">Женский</option>
                     </select>
                 </div>
                 <div class="reg-form-line"> 
                    <img src="../resourse/docs.svg" alt="Масса" class="reg-emoji">
-                    <button class="button-pet-reg-docs">
-                        <div class="pet-reg-input-docs"> 
+                    <label class="button-pet-reg-docs">
+                        <input type="file" name="file[]" multiple accept="application/pdf" id="pet-form-input-pet-docs">	
+                        <div class="pet-reg-input-docs" id="pet-form-uploaded-docs"> 
                             <span class="plus">+</span> 
                         </div>
-                    </button>
-                    <div class="docs-flag-area">Документы не загружены</div>
+                    </label>
+                    <div class="docs-flag-area">Паспорт питомца</div>
                 </div>
                 <div class="reg-form-line">
                     <button class="width-button button-reg-pet">

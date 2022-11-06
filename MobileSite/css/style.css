@@ -124,6 +124,7 @@ input:focus {
     margin-bottom: 40px;
 }
 
+/*
 .pet-card {
     background-color: #FF995C;
     width: 100%;
@@ -135,6 +136,7 @@ input:focus {
     color: white;
     box-shadow: 0px 10px 40px rgba(128, 128, 128, 0.7);
 }
+*/
 
 .card-image {
     height: 300px;
@@ -154,9 +156,9 @@ input:focus {
 .pet-card-text {
     font-size: 30px;
     width: calc(100% - 300px);
-    padding-left: 5%;
-    padding-top: 4%;
-    padding-right: 5%;
+    padding-left: 50px;
+    padding-top: 40px;
+    padding-right: 40px;
     box-sizing: border-box;
 }
 
@@ -232,7 +234,7 @@ input:focus {
     width: 100%;
 }
 
-.get-photo input[type=file]{
+label input[type=file]{
     position: absolute;
 	z-index: -1;
 	opacity: 0;
@@ -255,6 +257,13 @@ input:focus {
 
 .get-photo-block > img {
     height: 50%;
+}
+
+.get-photo-block > #pet-form-uploaded-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    object-fit: cover;   
 }
 
 .pet-reg-name-block {
@@ -414,13 +423,13 @@ option {
 .sign-in-logo {
     width: 100%;
     text-align: center;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     overflow: hidden;
     outline: none;
 }
 
 .sign-in-logo > img {
-    width: 60%;
+    width: 80%;
 }
 
 .sign-in-form {
@@ -487,6 +496,11 @@ option {
 .login-form > input::placeholder {
     background-color: #FFF7EA;
     color: #5E5E5E;
+}
+
+.login-form > input::-webkit-calendar-picker-indicator {
+    filter: invert(0);
+    padding-right: 30px;
 }
 
 .toggle-switch-conteiner {
@@ -620,13 +634,19 @@ option {
     text-align: left;
 }
 
+.card.account-card {
+    background-color: #43210D;
+    
+}
+
 .account-info {
     height: 300px;
     display: inline-block;
     font-family: Arial;
     margin-left: 50px;
-    color: #43210D;
+    color: white;
     max-width: 400px;
+    padding-top: 50px;
     
 }
 
@@ -673,44 +693,64 @@ option {
     text-decoration: underline;
 }
 
-.advice-card {
+.card {
     background-color: #FF995C;
     width: 100%;
     height: 300px;
     border-radius: 70px;
     border-color: none;
-    display: block;
+    display: flex;;
     font-family: "Arial";
     color: white;
     box-shadow: 0px 10px 40px rgba(128, 128, 128, 0.7);
 }
 
-.advice-card-title {
+.card-title {
     height: 100px;
     width: 100%;
     text-align: left;
-    padding-top: 10px;
-    padding-left: 70px;
     display: flex;
-    align-items: center;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 600;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .advice-card-text {
+    padding: 30px 50px 30px 40px;
+    width: calc(100% - 300px);
+    box-sizing: border-box;
+}
+
+.advice-card-description {
     display: block;
-    height: 200px;
+    height: 170px;
     width: 100%;
     text-align: left;
     font-size: 30px;
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    padding-right: 10px;
+    
     box-sizing: border-box;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
+    overflow: hidden;
 }
+
+.advice-card-description:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(180deg, transparent, #FF995C 50%);
+    border-radius: 0px 0px 30px 0px;
+}
+
 
 .account-content-card-container {
     margin: 30px 0px 60px 0px;
@@ -782,6 +822,7 @@ option {
 #pet-profile-panel {
     color: #43210D;
     width: 100%;
+    min-height: 1100px;
     height: 100%;
     background-color: #FFF7EA;
     position: absolute;
