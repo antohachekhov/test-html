@@ -1,3 +1,19 @@
+:root {
+    --app-brown: #43210D;
+    --app-beige : #FFF7EA;
+    --app-orange: #FF995C;
+    --app-green: #71CA63;
+    --app-dark-green: #17A50B;
+    --app-blue: #76C6FF;
+    --app-purple: #CA58B1;
+    --app-light-grey: #D9D9D9;
+    --shadow-header: 0px 20px 50px rgba(0, 0, 0, 0.4);
+    --shadow-button: 0px 10px 45px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0px 10px 30px rgba(0, 0, 0, 0.7);
+    --shadow-input: 0px 5px 25px rgba(0, 0, 0, 0.3);
+    --shadow-bottom-sheet: 0px -20px 70px rgba(0, 0, 0, 0.6);
+}
+
 body,
 html {
     margin: 0;
@@ -21,17 +37,34 @@ button {
     box-sizing: border-box;
 }
 
+.static-header {
+    margin: 0;
+    width: 100%;
+    padding: 60px 70px 30px 70px;
+    box-sizing: border-box;
+}
+
 .header-pet-profile {
     height: 600px;
     position: relative;
 }
 
-.header-search {
-    height: 230px;
+.header-panel {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    box-shadow: 0px 20px 50px rgba(128, 128, 128, 0.7);
-    background-color: #FFF7EA;
+    box-shadow: var(--shadow-header);
+    background-color: var(--app-beige);
+}
+
+.header-content {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    
 }
 
 .header-account {
@@ -43,6 +76,7 @@ button {
 
 .button-back {
     margin-right: 40px;
+    
 }
 
 .button-back-pet-profile {
@@ -53,9 +87,9 @@ button {
 .back {
     height: 70px;
     width: 70px;
-    
 }
 
+/*
 .region-search {
     width: 60%;
     background: none;
@@ -70,9 +104,11 @@ button {
     margin-right: 25px;
 }
 
+
 .img-search {
     height: 100%;
 }
+*/
 
 input:focus {
     outline: none;
@@ -85,7 +121,7 @@ input:focus {
     background: none;
     border: none;
     font-size: 45px;
-    color: #8C5F44;
+    color: var(--app-brown);
 }
 
 .input-search:focus {
@@ -106,6 +142,12 @@ input:focus {
 }
 
 .content {
+    margin-top: 160px;
+    padding: 80px 80px;
+    text-align: center;
+}
+
+.static-content {
     padding: 80px 80px;
     text-align: center;
 }
@@ -114,14 +156,15 @@ input:focus {
     font-size: 60px;
     font-family: "Arial";
     font-weight: 600;
-    color: #8C5F44;
+    color: var(--app-brown));
 }
 
-.list-pets {
+.list-cards {
 }
 
-.list-pets > * {
+.list-card {
     margin-bottom: 40px;
+    padding: 0;
 }
 
 /*
@@ -153,6 +196,17 @@ input:focus {
     margin-bottom: 30px;
 }
 
+.diet-card-description-line {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.pet-activity > img {
+    height: 30px;
+}
+
 .pet-card-text {
     font-size: 30px;
     width: calc(100% - 300px);
@@ -170,7 +224,7 @@ input:focus {
     width: 100%
 }
 
-.pet-card-description {
+.card-description {
     width: 100%;
     margin-top: 20px
 }
@@ -182,7 +236,7 @@ input:focus {
     text-align: left;
 }
 
-.button-new-pet {
+.button-new-item {
     position: sticky;
     bottom: 50px;
     background: none;
@@ -196,11 +250,11 @@ input:focus {
     height: 100px;
     border: none;
     border-radius: 50px;
-    background-color: #8C5F44;
+    background-color: var(--app-brown);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 10px 70px rgba(0, 0, 0, 0.9);
+    box-shadow: var(--shadow-button);
     color: white;
 }
 
@@ -219,7 +273,7 @@ input:focus {
 .pet-reg-title {
     text-align: center;
     display: block;
-    color: #8C5F44;
+    color: var(--app-brown);
     font-size: 300%;
     font-family: Arial;
     font-weight: 600;
@@ -248,7 +302,7 @@ label input[type=file]{
     float: left;
     width: 250px;
     height: 250px;
-    background-color: #D9D9D9;
+    background-color: var(--app-light-grey);
     border-radius: 60px;
     display: flex;
     justify-content: center;
@@ -279,11 +333,11 @@ label input[type=file]{
     height: 70px;
     font-size: 50px;
     border: none;
-    border-bottom: 5px solid #8C5F44;
+    border-bottom: 5px solid var(--app-brown);
 }
 
 .pet-reg-input-name:focus {
-    border-bottom: 5px solid #FF995C;
+    border-bottom: 5px solid var(--app-orange);
 }
 
 .reg-emoji {
@@ -317,8 +371,8 @@ label input[type=file]{
     font-weight: 300;
     border-radius: 30px;
     border: 0;
-    box-shadow: 0px 10px 50px rgba(0.5, 0.5, 0.5, 0.2);
-    background-color: #FF995C;
+    box-shadow: var(--shadow-input);
+    background-color: var(--app-orange);
     color: white;
     width: 90%;
 }
@@ -351,7 +405,7 @@ option {
     display: flex;
     width: 100px;
     height: 100px;
-    background-color: #8C5F44;
+    background-color: var(--app-brown);
     border-radius: 25px;
     align-items: center;
     justify-content: center;
@@ -385,21 +439,26 @@ option {
     align-items: flex-end;
     justify-content: center;
     display: none;
+    z-index: 2;
 }
 
-.pet-reg {
+.bottom-sheet {
     box-sizing: border-box;
-    padding: 30px 100px 0px 100px;
+    padding: 30px 100px 0px 100px;  
     background: white;
     width: 100%;
-    height: 100%;
-    max-height: 1600px;
     border-radius: 100px 100px 0px 0px;
     margin: 0px;
-    box-shadow: 0px -30px 40px rgba(128, 128, 128, 0.7);
+    box-shadow: var(--shadow-bottom-sheet);
     overflow: auto;
     transform: translateY(100%);
     transition: transform 0.4s ease-in-out;
+    z-index: 3;
+}
+
+.pet-reg {
+    height: 100%;
+    max-height: 1600px;
 }
 
 .dark.open {
@@ -411,19 +470,19 @@ option {
 }
 
 .sign-in-content {
-    position: absolute;
     width: 100%;
     height: 100%;
-    padding-top: 45%;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-top: 15vh;
+    padding-left: 15%;
+    padding-right: 15%;
     overflow: none;
+    box-sizing: border-box;
 }
 
 .sign-in-logo {
     width: 100%;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     overflow: hidden;
     outline: none;
 }
@@ -433,39 +492,42 @@ option {
 }
 
 .sign-in-form {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .sign-in-form-item {
     width: 100%;
-    height: 150px;
-    font-size: 65px;
+    height: 100px;
+    font-size: 45px;
     font-weight: 300;
-    border-radius: 40px;
+    border-radius: 30px;
     border: 0;
-    padding-left: 60px;
+    padding-left: 50px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-bottom: 50px;
-    box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.3);
-    color: #43210D;
+    box-shadow: var(--shadow-input);
+    color: var(--app-brown);
 }
 
-.sign-in-buttons {}
+.sign-in-buttons {
+    margin-bottom: 100px;
+    box-sizing: border-box;
+}
 
 .sign-in-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 150px;
-    background-color: #FF995C;
+    height: 100px;
+    background-color: var(--app-orange);
     border-radius: 75px;
-    font-size: 65px;
+    font-size: 45px;
     color: white;
     margin-bottom: 50px;
-    box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-button);
 }
 
 .header-back-title {
@@ -476,11 +538,12 @@ option {
 }
 
 .title {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     font-size: 60px;
     font-family: "Arial";
     font-weight: 600;
-    color: #8C5F44;
+    color: var(--app-brown);
 }
 
 .title-center {
@@ -489,12 +552,12 @@ option {
 }
 
 .login-form > input {
-    background-color: #FFF7EA;
-    color: #43210D;
+    background-color: var(--app-beige);
+    color: var(--app-brown);
 }
 
 .login-form > input::placeholder {
-    background-color: #FFF7EA;
+    background-color: var(--app-beige);
     color: #5E5E5E;
 }
 
@@ -557,19 +620,12 @@ option {
     transition: .1s;
 }
 
-.reg-form-checkbox:checked + .slider {
-    
-}
-
-.reg-form-checkbox:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
 
 .reg-form-checkbox:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-    background-color: #17A50B;
+    background-color: var(--app-dark-green);
 }
 
 
@@ -605,7 +661,7 @@ option {
 
 .reg-form-button {
     font-size: 40px;
-    background-color: #FB975B;
+    background-color: var(--app-orange);
 }
 
 .title-left {
@@ -635,7 +691,7 @@ option {
 }
 
 .card.account-card {
-    background-color: #43210D;
+    background-color: var(--app-brown);
     
 }
 
@@ -682,19 +738,19 @@ option {
 }
 
 .account-content-card-title {
-    color: #43210D;
+    color: var(--app-brown);
     font-size: 50px;
     font-weight: 800;
 }
 
 .account-content-card-more-info {
-    color: #FF995C;
+    color: var(--app-orange);
     font-size: 32px;
     text-decoration: underline;
 }
 
 .card {
-    background-color: #FF995C;
+    background-color: var(--app-orange);
     width: 100%;
     height: 300px;
     border-radius: 70px;
@@ -702,7 +758,32 @@ option {
     display: flex;;
     font-family: "Arial";
     color: white;
-    box-shadow: 0px 10px 40px rgba(128, 128, 128, 0.7);
+    box-shadow: var(--shadow-card);
+}
+
+.food-card {
+    background-color: var(--app-orange);
+    width: 100%;
+    min-height: 250px;
+    border-radius: 70px;
+    border-color: none;
+    display: flex;;
+    font-family: "Arial";
+    color: white;
+    box-shadow: var(--shadow-card);
+    position: relative;
+}
+
+.food-card-text {
+    width: 100%;
+    padding: 30px 80px;
+    text-align: left;
+}
+
+.food-card-title {
+    font-size: 45px;
+    font-weight: 600;
+    
 }
 
 .card-title {
@@ -747,7 +828,7 @@ option {
     bottom: 0;
     width: 100%;
     height: 40px;
-    background: linear-gradient(180deg, transparent, #FF995C 50%);
+    background: linear-gradient(180deg, transparent, var(--app-orange) 50%);
     border-radius: 0px 0px 30px 0px;
 }
 
@@ -782,12 +863,12 @@ option {
 .width-account-block {
     width: 100%;
     height: 125px;
-    background-color: #FF995C;
+    background-color: var(--app-orange);
     border-radius: 50px;
     text-align: left;
     padding: 20px 50px 20px 50px;
     box-sizing: border-box;
-    box-shadow: 0px 10px 40px rgba(128, 128, 128, 0.7);
+    box-shadow: var(--shadow-input);
 }
 
 .width-account-block-img {
@@ -820,17 +901,17 @@ option {
 }
 
 #pet-profile-panel {
-    color: #43210D;
+    color: var(--app-brown);
     width: 100%;
     min-height: 1100px;
     height: 100%;
-    background-color: #FFF7EA;
+    background-color: var(--app-beige);
     position: absolute;
     top: 600px;
     border-radius: 150px 150px 0px 0px; 
     font-family: "Arial";
     box-sizing: border-box;
-    box-shadow: 0px -10px 50px rgba(0, 0, 0, 0.8);
+    box-shadow: var(--shadow-bottom-sheet);
     padding: 90px 120px 0px 120px;
 }
 
@@ -892,21 +973,21 @@ option {
     width: 225px;
     height: 225px;
     border-radius: 60px;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-input);
     color: white;
-    background-color: #FF995C;
+    background-color: var(--app-orange);
 }
 
 #pet-attribute-block-weight {
-    background-color: #CA58B1;
+    background-color: var(--app-purple);
 }
 
 #pet-attribute-block-gender {
-    background-color: #71CA63;
+    background-color: var(--app-green);
 }
 
 #pet-attribute-block-age {
-    background-color: #76C6FF;
+    background-color: var(--app-blue);
 }
 
 .pet-profile-attribute-value-area {
@@ -942,4 +1023,69 @@ option {
 .pet-profile-attribute-links > .pet-profile-attribute-name-area {
     height: 45%;
     align-items: center;
+}
+
+.diet-card {
+    height: 380px;
+    position: relative;
+}
+
+.diet-card-text {
+    width: 100%;
+    height: 280px;
+    padding: 35px 50px 10px 50px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.diet-card-title {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.diet-card-description {
+    font-size: 34px;
+}
+
+.diet-card-dose-area {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--app-brown);
+    border-radius: 0px 0px 70px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.choosing-food {
+    width: 100%;
+}
+
+.food-card-desprition-line {
+    width: 100%;
+    font-size: 30px;
+    margin: 15px 0px;
+}
+
+.food-special-flag {
+    width: 100px;
+    height: 100px;
+    background-color: var(--app-dark-green);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 0px 70px 00px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-special-flag > img {
+    height: 70%;
 }

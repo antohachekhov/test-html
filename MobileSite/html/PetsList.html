@@ -11,9 +11,11 @@
     <link rel="manifest" href="../icon/site.webmanifest"> </head>
 
 <body style="background-color: while">
-    <div class="header header-search">
-        <a href="./Account.html" class="button-back"> <img src="../resourse/back.svg" alt="Назад" class="back"> </a>
+    <div class="header header-panel">
+        <div class="header-content">
+            <a href="./Account.html" class="button-back"> <img src="../resourse/back.svg" alt="Назад" class="back"> </a>
         <div class="title">СПИСОК ПИТОМЦЕВ</div>
+        </div>
         <!--
             <div class="region-search"> 
                <img src="../resourse/search.svg" alt="" class="img-search">
@@ -21,13 +23,13 @@
             <button class="button-filter"> <img src="../resourse/filter.svg" alt="Фильтр поиска" class="filter"> </button>
             --></div>
     <div class="content">
-        <div class="list-pets">
-            <div class="list-item">
+        <div class="list-cards">
+            <div class="list-card">
                 <a href="#" class="to-pet-profile">
                     <div class="card"> <img src="../resourse/pet.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Никитка</div>
-                            <div class="pet-card-description">
+                            <div class="card-description">
                                 <div class="pet-card-age-line one-line">
                                     <div class="pet-card-desc-title"> Возраст </div>
                                     <div class="pet-card-desc-value"> 22 </div>
@@ -41,12 +43,12 @@
                     </div>
                 </a>
             </div>
-            <div class="list-item">
+            <div class="list-card">
                 <a href="#" class="to-pet-profile">
                     <div class="card"> <img src="../resourse/pet3.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Сашуля</div>
-                            <div class="pet-card-description">
+                            <div class="card-description">
                                 <div class="pet-card-age-line one-line">
                                     <div class="pet-card-desc-title">Возраст</div>
                                     <div class="pet-card-desc-value">22</div>
@@ -60,12 +62,12 @@
                     </div>
                 </a>
             </div>
-            <div class="list-item">
+            <div class="list-card">
                 <a href="#" class="to-pet-profile">
                     <div class="card"> <img src="../resourse/pet4.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Ирочка</div>
-                            <div class="pet-card-description">
+                            <div class="card-description">
                                 <div class="pet-card-age-line one-line">
                                     <div class="pet-card-desc-title">Возраст</div>
                                     <div class="pet-card-desc-value">22</div>
@@ -79,12 +81,31 @@
                     </div>
                 </a>
             </div>
-            <div class="list-item">
+            <div class="list-card">
                 <a href="#" class="to-pet-profile">
                     <div class="card"> <img src="../resourse/pet5.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Серёженька</div>
-                            <div class="pet-card-description">
+                            <div class="card-description">
+                                <div class="pet-card-age-line one-line">
+                                    <div class="pet-card-desc-title">Возраст</div>
+                                    <div class="pet-card-desc-value">22</div>
+                                </div>
+                                <div class="pet-card-breed-line one-line">
+                                    <div class="pet-card-breed-title pet-card-desc-title">Порода</div>
+                                    <div class="pet-card-breed-value  pet-card-desc-value">Человек-разумный</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="list-card">
+                <a href="#" class="to-pet-profile">
+                    <div class="card"> <img src="../resourse/pet5.jpg" alt="" class="card-image">
+                        <div class="pet-card-text">
+                            <div class="pet-card-name">Серёженька</div>
+                            <div class="card-description">
                                 <div class="pet-card-age-line one-line">
                                     <div class="pet-card-desc-title">Возраст</div>
                                     <div class="pet-card-desc-value">22</div>
@@ -99,12 +120,12 @@
                 </a>
             </div>
         </div>
-        <button onclick="show_pet_reg_panel()" class="button-new-pet">
+        <button onclick="show_bottom_sheet()" class="button-new-item">
             <div class="width-button"> <span class="plus">+</span> </div>
         </button>
         <div class="dark">
-            <div class="pet-reg">
-                <button onclick="hide_pet_reg_panel()" class="close-reg"> <img src="../resourse/arrow.svg" alt="Назад" class="back"> </button> <span class="pet-reg-title">РЕГИСТРАЦИЯ ПИТОМЦА</span>
+            <div class="bottom-sheet pet-reg">
+                <button onclick="hide_bottom_sheet()" class="close-reg"> <img src="../resourse/arrow.svg" alt="Назад" class="back"> </button> <span class="pet-reg-title">РЕГИСТРАЦИЯ ПИТОМЦА</span>
                 <div class="reg-pet-form">
                     <div class="reg-form-line">
                         <label class="get-photo">
@@ -147,7 +168,9 @@
             </div>
         </div>
     </div>
-    <script src="../js/pet-reg.js"></script>
+    
+    <script src="../js/bottom-sheet.js"></script>
+    <script src="../js/header-scroll.js"></script>
 </body>
 
 </html>
