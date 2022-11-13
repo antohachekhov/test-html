@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Корм</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+    <link rel="manifest" href="../icon/site.webmanifest">
+    
+</head>
+<body style="background-color: #FFF7EA">
+    <div class="static-header">
+        <div class="header-back-title">
+            <a href="javascript:history.back()" class="button-back"> <img src="../resourse/back-brown.svg" alt="Назад" class="back"></a>
+            <span class="title" style="color: #43210D">НАЗВАНИЕ КОРМА</span> 
+        </div>
+    </div>
+    <div class="content-without-header">
+        <div class="food-info-block">
+            <div class="subtitle">Информация о корме</div>
+            <div class="food-info-text">
+                <div class="food-info-line">Название корма</div>
+                <div class="food-info-line">Бренд</div>
+                <div class="food-info-line">Тип корма</div>
+                <div class="food-info-line">Порода</div>
+                <div class="food-info-line">Стерилизованный</div>
+            </div>
+        </div>
+        <div class="food-calculation">
+            <div class="subtitle">Введите данные для расчёта</div>
+            <div class="food-calculation-form">
+                <input type="text" class="reg-form-input" placeholder="Введите название рациона">
+                <input type="text" class="reg-form-input" placeholder="Масса питомца">
+                <select class="reg-form-input">
+                            <option selected hidden>Активность питомца</option>
+                            <option>Низкая</option>
+                            <option>Средняя</option>
+                            <option>Высокая</option>
+                        </select>
+                <button class="width-button width-button-text food-form-button">
+                    Расчитать   
+                </button>
+            </div>
+            <div class="food-calcutation-result-block">
+                <input type="text" class="reg-form-input" placeholder="Размер суточной порции">
+                <button class="width-button width-button-text food-form-button">
+                    Сохранить   
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

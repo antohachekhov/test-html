@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Безопасность</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+    <link rel="manifest" href="../icon/site.webmanifest">
+    
+</head>
+<body style="background-color: #FFF7EA">
+    <div class="static-header">
+        <div class="header-back-title">
+            <a href="javascript:history.back()" class="button-back"> <img src="../resourse/back-brown.svg" alt="Назад" class="back"></a>
+            <span class="title title-center">БЕЗОПАСНОСТЬ</span> 
+        </div>
+    </div>
+    <div class="content-without-header">
+        <div class="settings-list-buttons">
+            <div class="settings-list-block">
+                <button onclick="show_change_keyword()" class="settings-list-button secutiry-button">
+                    Сменить пароль
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dark">
+            <div class="bottom-sheet change-key-panel">
+                <button onclick="hide_change_keyword()" class="bottom-sheet-close"> <img src="../resourse/arrow.svg" alt="Назад" class="back"> </button> <span class="bottom-sheet-title">СМЕНА ПАРОЛЯ</span>
+                <div class="change-key-form">
+                    <div class="reg-form-line"> <img src="../resourse/old-key.svg" alt="Дата рождения" class="form-emoji">
+                         <input placeholder="Старый пароль" type="password" class="reg-form-input input-password" required="required"> 
+                        <button class="password-control" onclick="show_password(this)">
+                            <img src="../resourse/eye-open.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="reg-form-line"> <img src="../resourse/new-key.svg" alt="Дата рождения" class="form-emoji">
+                         <input placeholder="Новый пароль" type="password" class="reg-form-input input-password" required="required"> 
+                        <button class="password-control" onclick="show_password(this)">
+                            <img src="../resourse/eye-open.svg" alt="">
+                        </button> 
+                    </div>
+                    <div class="reg-form-line"> 
+                       <img src="../resourse/new-key.svg" alt="Масса" class="form-emoji">
+                        <input placeholder="Повторите новый пароль" type="password" class="reg-form-input input-password" required="required"> 
+                        <button class="password-control" onclick="show_password(this)">
+                            <img src="../resourse/eye-open.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <button class="width-button width-button-text">Изменить пароль </button>
+            </div>
+                
+            </div>
+    
+    <script src="../js/bottom-sheet.js"></script>
+    <script src="../js/password.js"></script>
+    
+</body>
+
+</html>

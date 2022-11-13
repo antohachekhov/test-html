@@ -7,11 +7,19 @@
     --app-blue: #76C6FF;
     --app-purple: #CA58B1;
     --app-light-grey: #D9D9D9;
+    --app-pink: #FFA3C4;
+    --app-invalid-input: #FFB0B0;
     --shadow-header: 0px 20px 50px rgba(0, 0, 0, 0.4);
     --shadow-button: 0px 10px 45px rgba(0, 0, 0, 0.6);
     --shadow-card: 0px 10px 30px rgba(0, 0, 0, 0.7);
     --shadow-input: 0px 5px 25px rgba(0, 0, 0, 0.3);
     --shadow-bottom-sheet: 0px -20px 70px rgba(0, 0, 0, 0.6);
+    --shadow-input-inside: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
+    
+}
+
+* {
+    font-family: "Calibri";
 }
 
 body,
@@ -22,8 +30,8 @@ html {
 
 a {
     text-decoration: none;
-    font-family: Arial;
 }
+
 
 button {
     background: none;
@@ -33,14 +41,14 @@ button {
 .header {
     margin: 0;
     width: 100%;
-    padding: 60px 70px 30px 70px;
+    padding: 60px 30px 30px 30px;
     box-sizing: border-box;
 }
 
 .static-header {
     margin: 0;
     width: 100%;
-    padding: 60px 70px 30px 70px;
+    padding: 60px 30px 30px 30px;
     box-sizing: border-box;
 }
 
@@ -62,20 +70,28 @@ button {
 
 .header-content {
     height: 100px;
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: left;
     
 }
 
 .header-account {
     height: 200px;
+    padding-left: 80px;
+    padding-right: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .button-back {
-    margin-right: 40px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 30px;
+    z-index: 2;
+    width: 80px;
     
 }
 
@@ -147,16 +163,19 @@ input:focus {
     text-align: center;
 }
 
+.content-pdf {
+    margin-top: 160px;
+    padding: 80px 0px;
+}
+
 .static-content {
     padding: 80px 80px;
     text-align: center;
 }
 
-.subtitle {
-    font-size: 60px;
-    font-family: "Arial";
-    font-weight: 600;
-    color: var(--app-brown));
+.content-without-header {
+    padding: 40px 80px;
+    text-align: center;
 }
 
 .list-cards {
@@ -175,7 +194,6 @@ input:focus {
     border-radius: 70px;
     border-color: none;
     display: flex;
-    font-family: "Arial";
     color: white;
     box-shadow: 0px 10px 40px rgba(128, 128, 128, 0.7);
 }
@@ -263,28 +281,35 @@ input:focus {
     font-weight: 800;
 }
 
-.close-reg {
+.bottom-sheet-close {
     display: block;
     background: none;
     border: none;
     width: 100%;
 }
 
-.pet-reg-title {
+.bottom-sheet-title {
     text-align: center;
     display: block;
     color: var(--app-brown);
-    font-size: 300%;
-    font-family: Arial;
+    font-size: 55px;
     font-weight: 600;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 
 .reg-form-line {
     box-sizing: border-box;
     display: flex;
-    margin: 60px 0px;
+    margin-bottom: 60px;
+    width: 100%;
+    position: relative;
+}
+
+.personal-data-form-line {
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 40px;
     width: 100%;
 }
 
@@ -295,6 +320,10 @@ label input[type=file]{
 	display: block;
 	width: 0;
 	height: 0;
+}
+
+input[type=email]:invalid {
+    background-color: var(--app-invalid-input);
 }
 
 .get-photo-block {
@@ -340,12 +369,18 @@ label input[type=file]{
     border-bottom: 5px solid var(--app-orange);
 }
 
-.reg-emoji {
+.form-emoji {
     box-sizing: border-box;
     display: block;
     float: left;
     width: 10%;
-    margin: 10px 20px 10px 30px;
+    margin: 10px 30px 10px 20px;
+}
+
+.form-emoji-text {
+    color: white;
+    font-size: 6vw;
+    text-align: center;
 }
 
 .pet-reg-date {
@@ -418,13 +453,11 @@ option {
     line-height: 100px;
     text-align: center;
     font-size: 30px;
-    font-family: Arial;
 }
 
 .docs-flag {}
 
-.button-reg-pet {
-    font-family: Arial;
+.width-button-text {
     font-size: 40px;
     width: 100%;
 }
@@ -454,9 +487,15 @@ option {
     transform: translateY(100%);
     transition: transform 0.4s ease-in-out;
     z-index: 3;
+    position: absolute;
 }
 
 .pet-reg {
+    height: 100%;
+    max-height: 1600px;
+}
+
+.pet-share {
     height: 100%;
     max-height: 1600px;
 }
@@ -466,6 +505,20 @@ option {
 }
 
 .pet-reg.open {
+    transform: translateY(0%);
+    z-index: 4;
+}
+
+.pet-share.open {
+    transform: translateY(0%);
+}
+
+.change-key-panel {
+    height: 100%;
+    max-height: 900px;
+}
+
+.change-key-panel.open {
     transform: translateY(0%);
 }
 
@@ -531,24 +584,30 @@ option {
 }
 
 .header-back-title {
+    height: 80px;
+    padding-top: 20px;
+    width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
-    height: 150px;
-    padding-top: 150px;
+}
+
+.header-log-in {
+    padding-top: 90px;
 }
 
 .title {
-    display: flex;
-    align-items: center;
+    display: inline-block;
     font-size: 60px;
-    font-family: "Arial";
     font-weight: 600;
     color: var(--app-brown);
 }
 
 .title-center {
     position: absolute;
-    left: 28%;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
 }
 
 .login-form > input {
@@ -566,13 +625,42 @@ option {
     padding-right: 30px;
 }
 
+.personal-data-form {
+    box-sizing: border-box;
+    height: 100px;
+    width: 90%;
+    padding: 0px 0px 0px 30px;
+    font-size: 40px;
+    font-weight: 300;
+    border-radius: 30px;
+    border: 0;
+    box-shadow: var(--shadow-input-inside);
+    background-color: var(--app-orange);
+    color: white;
+    width: 90%;
+}
+
+.personal-data-form {
+    background-color: var(--app-beige);
+    color: var(--app-brown);
+}
+
+.personal-data-form::placeholder {
+    color: #5E5E5E;
+}
+
+.personal-data-form::-webkit-calendar-picker-indicator {
+    filter: invert(0);
+    padding-right: 30px;
+}
+
 .toggle-switch-conteiner {
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     float: left;
-    margin-right: 20px;
+    margin: 0px 20px;
 }
 
 .switch {
@@ -580,7 +668,6 @@ option {
     display: inline-block;
     width: 80px;
     height: 50px;
-    margin-left: 40px;
 }
 
 
@@ -608,6 +695,10 @@ option {
     border: solid 5px white;
 }
 
+.slider-settings {
+    border-color: var(--app-brown);
+}
+
 .slider:before {
     position: absolute;
     content: "";
@@ -620,6 +711,9 @@ option {
     transition: .1s;
 }
 
+.slider-settings:before {
+    background-color: var(--app-brown);
+}
 
 .reg-form-checkbox:checked + .slider:before {
     -webkit-transform: translateX(26px);
@@ -644,7 +738,6 @@ option {
     width: 100%;
     padding-left: 20px;
     font-size: 30px;
-    font-family: Arial;
     text-align: left;
 }
 
@@ -662,6 +755,7 @@ option {
 .reg-form-button {
     font-size: 40px;
     background-color: var(--app-orange);
+    margin-bottom: 60px;
 }
 
 .title-left {
@@ -698,7 +792,6 @@ option {
 .account-info {
     height: 300px;
     display: inline-block;
-    font-family: Arial;
     margin-left: 50px;
     color: white;
     max-width: 400px;
@@ -733,7 +826,6 @@ option {
     align-items: center;
     justify-content: space-between;
     height: 70px;
-    font-family: Arial;
     margin: 30px 0px 15px 0px;
 }
 
@@ -756,7 +848,6 @@ option {
     border-radius: 70px;
     border-color: none;
     display: flex;;
-    font-family: "Arial";
     color: white;
     box-shadow: var(--shadow-card);
 }
@@ -768,7 +859,6 @@ option {
     border-radius: 70px;
     border-color: none;
     display: flex;;
-    font-family: "Arial";
     color: white;
     box-shadow: var(--shadow-card);
     position: relative;
@@ -858,6 +948,7 @@ option {
 .width-account-block-link {
     display: block;
     margin: 40px 0px;
+    width: 100%;
 }
 
 .width-account-block {
@@ -869,10 +960,17 @@ option {
     padding: 20px 50px 20px 50px;
     box-sizing: border-box;
     box-shadow: var(--shadow-input);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.width-account-block-brown {
+    background-color: var(--app-brown);
 }
 
 .width-account-block-img {
-    height: 80px;
+    height: 70px;
     margin-right: 30px;
     float: left;
 }
@@ -884,6 +982,12 @@ option {
     font-size: 31px;
     font-weight: 600;
     color: white;
+}
+
+.width-account-block-arrow {
+    position: absolute;
+    right: 30px;
+    height: 40px;
 }
 
 #pet-profile-photo-container {
@@ -909,7 +1013,6 @@ option {
     position: absolute;
     top: 600px;
     border-radius: 150px 150px 0px 0px; 
-    font-family: "Arial";
     box-sizing: border-box;
     box-shadow: var(--shadow-bottom-sheet);
     padding: 90px 120px 0px 120px;
@@ -940,7 +1043,7 @@ option {
     
 }
 
-.pet-profile-panel-header-button-img {
+.pet-profile-panel-header-button-img, .diet-info-header-button-img {
     height: 50px;
 }
 
@@ -1009,7 +1112,7 @@ option {
     justify-content: center;
     align-items: flex-start;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .pet-profile-attribute-value-area > img {
@@ -1023,6 +1126,10 @@ option {
 .pet-profile-attribute-links > .pet-profile-attribute-name-area {
     height: 45%;
     align-items: center;
+}
+
+.to-diet-info {
+    width: 100%;
 }
 
 .diet-card {
@@ -1063,8 +1170,24 @@ option {
     font-weight: 700;
 }
 
+.diet-info {
+    height: 100%;
+    max-height: 1700px;    
+}
+
+.diet-info.open {
+    transform: translateY(0%);
+    z-index: 4;
+}
+
 .choosing-food {
     width: 100%;
+}
+
+.subtitle {
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--app-brown);
 }
 
 .food-card-desprition-line {
@@ -1088,4 +1211,560 @@ option {
 
 .food-special-flag > img {
     height: 70%;
+}
+
+.food-info-block {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.food-info-text {
+    margin-top: 30px;
+    font-size: 42px;
+    color: var(--app-brown);
+}
+
+.food-info-line {
+    margin: 10px 0px;
+}
+
+.food-calculation-form {
+    padding-top: 40px;
+}
+
+.food-calculation-form > .reg-form-input {
+    margin-bottom: 30px;
+}
+
+.food-form-button {
+    margin-top: 10px;
+}
+
+.food-calcutation-result-block {
+    padding-top: 50px;
+}
+
+.food-calcutation-result-block > .reg-form-input {
+    margin-bottom: 30px;
+}
+
+.pet-share-form {
+    text-align: center;
+    font-size: 45px;
+}
+
+.pet-owner-block {
+    font-weight: 600;
+    color: var(--app-dark-green);
+}
+
+.list-users-area {
+    margin-top: 50px;
+}
+
+.list-users-title {
+    font-weight: 600;
+    color: var(--app-brown);
+}
+
+.pet-share-new-user-area {
+    margin-top: 30px;
+    position: relative;
+}
+
+.pet-share-new-user-input {
+    width: 100%;
+    height: 90px;
+    border-radius: 35px;
+    border: 4px solid var(--app-brown);
+    font-size: 40px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    padding-right: 220px;
+}
+
+.pet-share-new-user-button {
+    width: 210px;
+    height: 90px;
+    position: absolute;
+    right: 0;
+    background-color: var(--app-brown);
+    border-radius: 0px 35px 35px 0px;
+    color: white;
+    font-size: 30px;
+}
+
+.list-users-block {
+    margin: 15px 0px;
+    height: 900px;
+    overflow: scroll;
+    padding: 0px 15px;
+}
+
+.pet-share-user-block {
+    margin: 30px 0px;
+    width: 100%;
+    height: 90px;
+    background-color: var(--app-orange);
+    color: white;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    box-sizing: border-box;
+}
+
+.pet-share-user-name {
+    width: 85%;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pet-share-user-delete > img {
+    height: 50px;
+}
+
+.diet-info-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#diet-info-title {
+    font-size: 60px;
+    text-align: left;
+    font-weight: 600;
+    width: 80%;
+    max-height: 300px;
+    overflow: scroll;
+}
+
+.diet-info-header-buttons {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.diet-grid-description {
+    margin: 50px 0px;
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-areas: 
+        "food-card pet-data"
+        "food-card daily-size";
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: 220px 1fr;
+    grid-gap: 5%;
+}
+
+.diet-info-food-card {
+    grid-area: food-card;
+}
+
+.diet-info-pet-data {
+    grid-area: pet-data;
+}
+
+.diet-info-daily-size {
+    grid-area: daily-size;
+}
+
+.diet-info-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 55px;
+    border-color: none;
+    color: white;
+    box-shadow: var(--shadow-input);
+    position: relative;
+}
+
+.diet-info-food-card {
+    background-color: var(--app-orange);
+}
+
+.diet-info-food-flag {
+    width: 70px;
+    height: 70px;
+    background-color: var(--app-dark-green);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 0px 55px 00px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.diet-info-food-flag > img {
+    height: 70%;
+}
+
+.diet-info-pet-data {
+    background-color: var(--app-blue);
+}
+
+.diet-info-daily-size {
+    background-color: var(--app-pink);
+}
+
+.diet-info-card-title {
+    width: 100%;
+    height: 60px;
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diet-info-card-description {
+    height: calc(100% - 60px);
+    width: 100%;
+    padding: 10px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.diet-info-food-card-title {
+    margin-bottom: 30px;
+}
+
+.diet-info-food-card-title-name {
+    font-size: 40px;
+    max-height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+
+.diet-info-food-card-title-brand {
+    font-size: 30px;
+}
+
+.diet-info-card-description-lines {
+    text-align: left;
+    font-size: 35px;
+}
+
+.diet-info-card-description-line {
+    margin: 10px 0px;
+}
+
+.diet-info-card-description-line > img {
+    height: 35px;
+}
+
+.diet-info-daily-size-value {
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.diet-info-table-diet {
+    text-align: left;
+    font-size: 50px;
+    font-weight: 700;
+    padding-left: 40px;
+}
+
+.table-portions-block {
+    margin: 10px 0px 50px 0px;
+    width: 100%;
+    position: relative;
+    height: 700px;
+    overflow: scroll;
+}
+
+.table-vertical-line {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--app-brown);
+
+}
+
+.table-vertical-line-first {
+    left: 25%;    
+}
+
+.table-vertical-line-second {
+    left: 60%;    
+}
+
+.table-vertical-line-third {
+    left: 75%;    
+}
+
+.table-portions {
+    width: 100%;
+}
+
+.table-title-line {
+    width: 100%;
+    height: 90px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.table-time-title {
+    width: 25%;
+}
+
+.table-portion-title {
+    width: 35%;
+}
+
+.table-check-title {
+    width: 15%;
+}
+
+.table-buttons-title {
+    width: 25%;
+}
+
+.table-line > td {
+    height: 100px;
+    background-color: var(--app-beige);
+    border-top: 15px solid white;
+    border-bottom: 15px solid white;
+    
+}
+
+.table-value {
+
+}
+
+.table-value-input {
+    font-size: 45px;
+    color: var(--app-brown);
+    width: 80%;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    text-align: center;
+}
+
+
+.table-value-input::placeholder {
+    color: var(--app-brown);
+}
+
+.table-value-input-size
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.table-value-input-size::-ms-clear {
+    display: none;
+    
+}
+
+.table-value-size-label
+  {
+    font-size: 40px;
+    display: inline-block;
+      width: 100%;
+  }
+
+.table-input-size-measurement
+  {
+      position: relative;
+      
+  }
+
+.table-input-size-measurement::before
+  {
+      position: relative;
+    display: inline-block;
+    content: attr(data-val);
+    white-space: pre;
+      width: 90%;
+  }
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.table-check > input {
+    width: 40px;
+    height: 40px;
+}
+
+.table-value-size::after {
+    content: 'кг';
+}
+
+.table-button-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+    box-sizing: border-box;
+}
+
+.table-button-block > button {
+    width: 40px;
+    height: 40px;
+}
+
+.table-button-block > button > img {
+    width: 40px;
+    height: 40px;
+}
+
+.button-bottom-sheet {
+    margin-bottom: 60px;
+}
+
+.settings-list-buttons {
+    width: 100%;
+}
+
+.settings-list-block {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.settings-list-button {
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--app-brown);
+    border-radius: 30px;
+    box-shadow: var(--shadow-button);
+    color: white;
+    font-size: 43px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.settings-list-button-arrow {
+    position: absolute;
+    right: 5%;
+    height: 40px;
+}
+
+.secutiry-button {
+    text-align: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.password-control {
+    position: absolute;
+    right: 3%;
+    display: inline-block;
+    height: 100%;
+    width: 70px;
+    visibility: hidden;
+}
+
+.password-control > img {
+    width: 80%;
+}
+
+.input-password {
+    padding-right: 100px;
+}
+
+.input-password:valid + .password-control {
+    visibility: visible;
+}
+
+.account-pet-list-container {
+    width: 100%;
+    height: 300px;
+    border: 2px solid var(--app-brown);
+    border-radius: 60px;
+    /*box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.2);*/
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.account-pet-list-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card-mini {
+    width: 230px;
+    height: 100%;
+    position: relative;
+    margin-right: 10px;
+} 
+
+.card-mini-img {
+    width: 200px;
+    height: 200px;
+    background-color: var(--app-brown);
+    border-radius: 60px;
+    margin: 0px 15px;
+    box-shadow: var(--shadow-input);
+}
+
+.card-mini-img > img {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+.card-mini-title {
+    color: var(--app-brown);
+    font-size: 35px;
+    width: 100%;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 10px 0px;
+}
+
+.mini-new-pet {
+    height: 200px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 25px;
+}
+
+.mini-button {
+    height: 100px;
+    width: 100px;
+    background-color: var(--app-brown);
+    color: white;
+    border-radius: 30px;
+    box-shadow: var(--shadow-input);
+}
+
+.embed-pdf {
+    width: 100%;
+    height: 100vh;
+    background-color: grey;
+}
+
+.settings-acceptance {
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    width: 100%;
+    color: var(--app-brown);
+}
+
+.settings-acceptance > .toggle-switch-conteiner {
+    margin-left: 0px;
+}
+
+.app-settings-list {
+    display: flex;
 }

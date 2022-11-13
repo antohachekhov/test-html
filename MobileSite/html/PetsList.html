@@ -13,7 +13,7 @@
 <body style="background-color: while">
     <div class="header header-panel">
         <div class="header-content">
-            <a href="./Account.html" class="button-back"> <img src="../resourse/back.svg" alt="Назад" class="back"> </a>
+            <a href="javascript:history.back()" class="button-back"> <img src="../resourse/back.svg" alt="Назад" class="back"> </a>
         <div class="title">СПИСОК ПИТОМЦЕВ</div>
         </div>
         <!--
@@ -23,7 +23,7 @@
             <button class="button-filter"> <img src="../resourse/filter.svg" alt="Фильтр поиска" class="filter"> </button>
             --></div>
     <div class="content">
-        <div class="list-cards">
+        <div class="list-cards" id="list_pets">
             <div class="list-card">
                 <a href="#" class="to-pet-profile">
                     <div class="card"> <img src="../resourse/pet.jpg" alt="" class="card-image">
@@ -120,25 +120,25 @@
                 </a>
             </div>
         </div>
-        <button onclick="show_bottom_sheet()" class="button-new-item">
-            <div class="width-button"> <span class="plus">+</span> </div>
+        <button onclick="show_bottom_sheet_pet_form()" class="button-new-item">
+            <div class="width-button plus">+</div>
         </button>
         <div class="dark">
             <div class="bottom-sheet pet-reg">
-                <button onclick="hide_bottom_sheet()" class="close-reg"> <img src="../resourse/arrow.svg" alt="Назад" class="back"> </button> <span class="pet-reg-title">РЕГИСТРАЦИЯ ПИТОМЦА</span>
+                <button onclick="hide_bottom_sheet_pet_form()" class="bottom-sheet-close"> <img src="../resourse/arrow.svg" alt="Назад" class="back"> </button> <span class="bottom-sheet-title">РЕГИСТРАЦИЯ ПИТОМЦА</span>
                 <div class="reg-pet-form">
                     <div class="reg-form-line">
                         <label class="get-photo">
-                            <input type="file" name="file[]" multiple accept="image/*">
+                            <input id="pet_photo" type="file" name="file[]" multiple accept="image/*">
                             <div class="get-photo-block"> <img src="../resourse/camera.svg" alt="Загрузить изображение"> </div>
                         </label>
                         <div class="pet-reg-name-block">
-                            <input type="text" class="pet-reg-input-name" placeholder="Имя питомца"> </div>
+                            <input id="pet_name" type="text" class="pet-reg-input-name" placeholder="Имя питомца"> </div>
                     </div>
-                    <div class="reg-form-line"> <img src="../resourse/birth.svg" alt="Дата рождения" class="reg-emoji">
-                        <input placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date reg-form-input"> </div>
-                    <div class="reg-form-line"> <img src="../resourse/dog.svg" alt="Дата рождения" class="reg-emoji">
-                        <select name="breed" class="reg-form-input">
+                    <div class="reg-form-line"> <img src="../resourse/birth.svg" alt="Дата рождения" class="form-emoji">
+                        <input id="pet_date_of_birth" placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date reg-form-input"> </div>
+                    <div class="reg-form-line"> <img src="../resourse/dog.svg" alt="Дата рождения" class="form-emoji">
+                        <select id="pet_breed" name="breed" class="reg-form-input">
                             <option selected hidden>Выберите породу</option>
                             <option value="s1">Порода 1</option>
                             <option value="s2">Порода 2</option>
@@ -146,23 +146,27 @@
                             <option value="s3">Порода 4</option>
                         </select>
                     </div>
-                    <div class="reg-form-line"> <img src="../resourse/scales.svg" alt="Масса" class="reg-emoji">
-                        <input placeholder="Масса питомца" type="text" class="reg-form-input"> </div>
-                    <div class="reg-form-line"> <img src="../resourse/gender.svg" alt="Пол питомца" class="reg-emoji">
-                        <select name="gender" class="reg-form-input">
+                    <div class="reg-form-line"> <img src="../resourse/scales.svg" alt="Масса" class="form-emoji">
+                        <input id="pet_weight" placeholder="Масса питомца" type="text" class="reg-form-input"> </div>
+                    <div class="reg-form-line"> <img src="../resourse/gender.svg" alt="Пол питомца" class="form-emoji">
+                        <select id="pet_gender" name="gender" class="reg-form-input">
                             <option selected hidden>Выберите пол</option>
                             <option value="s1">Мужской</option>
                             <option value="s2">Женский</option>
                         </select>
                     </div>
-                    <div class="reg-form-line"> <img src="../resourse/docs.svg" alt="Масса" class="reg-emoji">
-                        <button class="button-pet-reg-docs">
-                            <div class="pet-reg-input-docs"> <span class="plus">+</span> </div>
-                        </button>
-                        <div class="docs-flag-area">Паспорт питомца</div>
-                    </div>
+                    <div class="reg-form-line"> 
+                   <img src="../resourse/docs.svg" alt="Масса" class="form-emoji">
+                    <label class="button-pet-reg-docs">
+                        <input type="file" name="file[]" multiple accept="application/pdf" id="pet-form-input-pet-docs">	
+                        <div class="pet-reg-input-docs" id="pet-form-uploaded-docs"> 
+                            <span class="plus">+</span> 
+                        </div>
+                    </label>
+                    <div class="docs-flag-area">Паспорт питомца</div>
+                </div>
                     <div class="reg-form-line">
-                        <button class="width-button button-reg-pet"> Зарегистрировать питомца </button>
+                        <button class="width-button width-button-text"> Зарегистрировать питомца </button>
                     </div>
                 </div>
             </div>
