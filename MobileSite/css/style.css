@@ -14,12 +14,49 @@
     --shadow-card: 0px 10px 30px rgba(0, 0, 0, 0.7);
     --shadow-input: 0px 5px 25px rgba(0, 0, 0, 0.3);
     --shadow-bottom-sheet: 0px -20px 70px rgba(0, 0, 0, 0.6);
-    --shadow-input-inside: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
+    --shadow-input-inside: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.7);
     
 }
 
+/* Regular */
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto')
+		url('../resource/Roboto-Regular.ttf') format('ttf');
+}
+
+/* Medium */
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Roboto')
+		url('../resource/Roboto-Medium.ttf') format('ttf');
+}
+
+/* Bold */
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Roboto')
+		url('../resource/Roboto-Bold.ttf') format('ttf');
+}
+
+/* Black */
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Roboto')
+		url('../resource/Roboto-Black.ttf') format('ttf');
+}
+ 
+
 * {
-    font-family: "Calibri";
+    font-family: "Roboto";
 }
 
 body,
@@ -292,7 +329,7 @@ input:focus {
     text-align: center;
     display: block;
     color: var(--app-brown);
-    font-size: 55px;
+    font-size: 50px;
     font-weight: 600;
     margin-top: 20px;
     margin-bottom: 40px;
@@ -607,7 +644,7 @@ option {
     position: absolute;
     width: 100%;
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .login-form > input {
@@ -782,6 +819,11 @@ option {
 
 .account-card {
     text-align: left;
+}
+
+.account-card > img {
+    visibility: hidden;
+    display: none;
 }
 
 .card.account-card {
@@ -1541,6 +1583,7 @@ option {
     font-size: 45px;
     color: var(--app-brown);
     width: 80%;
+    height: 70px;
     background-color: rgba(0,0,0,0);
     border: none;
     text-align: center;
@@ -1601,20 +1644,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .table-button-block {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 30px;
+    height: 100%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .table-button-block > button {
-    width: 40px;
-    height: 40px;
+    width: 45%;
+    height: 100%;
 }
 
 .table-button-block > button > img {
-    width: 40px;
-    height: 40px;
+    height: 45%;
 }
 
 .button-bottom-sheet {
@@ -1685,7 +1728,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border: 2px solid var(--app-brown);
     border-radius: 60px;
     /*box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.2);*/
-    padding: 20px;
+    padding: 25px 20px 20px 20px;
     box-sizing: border-box;
     display: flex;
     overflow-x: scroll;
@@ -1720,7 +1763,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .card-mini-title {
     color: var(--app-brown);
-    font-size: 35px;
+    font-size: 30px;
     width: 100%;
     max-height: 40px;
     overflow: hidden;
