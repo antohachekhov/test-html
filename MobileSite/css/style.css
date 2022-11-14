@@ -23,9 +23,12 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 400;
+	src: url('../resource/Roboto-Regular.eot');
 	src: local('Roboto')
-		url('../resource/Roboto-Regular.ttf') format('ttf'),
+        url('../resource/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../resource/Roboto-Regular.ttf') format('truetype'),
         url('../resource/Roboto-Regular.woff2') format('woff2'),
+        url('../resource/Roboto-Regular.svg#robotoregular') format('svg'),
         url('../resource/Roboto-Regular.woff') format('woff');
 }
 
@@ -34,9 +37,12 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 500;
+	src: url('../resource/Roboto-Medium.eot');
 	src: local('Roboto')
-		url('../resource/Roboto-Medium.ttf') format('ttf'),
+        url('../resource/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../resource/Roboto-Medium.ttf') format('truetype'),
         url('../resource/Roboto-Medium.woff2') format('woff2'),
+        url('../resource/Roboto-Medium.svg#robotomedium') format('svg'),
         url('../resource/Roboto-Medium.woff') format('woff');
 
 }
@@ -46,9 +52,12 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 700;
+	src: url('../resource/Roboto-Bold.eot');
 	src: local('Roboto')
-		url('../resource/Roboto-Bold.ttf') format('ttf'),
+        url('../resource/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../resource/Roboto-Bold.ttf') format('truetype'),
         url('../resource/Roboto-Bold.woff2') format('woff2'),
+        url('../resource/Roboto-Bold.svg#robotobold') format('svg'),
         url('../resource/Roboto-Bold.woff') format('woff');
 }
 
@@ -57,9 +66,12 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 900;
+    src: url('../resource/Roboto-Black.eot');
 	src: local('Roboto')
-		url('../resource/Roboto-Black.ttf') format('ttf'),
+        url('../resource/Roboto-Black.eot?#iefix') format('embedded-opentype'),
+		url('../resource/Roboto-Black.ttf') format('truetype'),
         url('../resource/Roboto-Black.woff2') format('woff2'),
+        url('../resource/Roboto-Black.svg#robotoblack') format('svg'),
         url('../resource/Roboto-Black.woff') format('woff');
 }
  
@@ -805,11 +817,11 @@ option {
 }
 
 .title-left {
-    
+    width: 70%;
 }
 
 .header-account-buttons {
-    
+    width: 30%;
 }
 
 .header-account-button {
