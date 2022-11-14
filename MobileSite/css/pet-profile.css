@@ -1,0 +1,143 @@
+.button-back-pet-profile {
+    position: sticky;
+    top: 120px;
+}
+
+.header-pet-profile {
+    height: 600px;
+    position: relative;
+}
+
+#pet-profile-photo-container {
+    display: block;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    box-sizing: border-box;
+}
+
+#pet-profile-photo {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;    
+}
+
+#pet-profile-panel {
+    color: var(--app-brown);
+    width: 100%;
+    min-height: 1100px;
+    height: 100%;
+    background-color: var(--app-beige);
+    position: absolute;
+    top: 600px;
+    border-radius: 150px 150px 0px 0px; 
+    box-sizing: border-box;
+    box-shadow: var(--shadow-bottom-sheet);
+    padding: 90px 120px 0px 120px;
+}
+
+#pet-profile-panel-header {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+#pet-name {
+    width: calc(100% - 180px);
+    font-size: 60px;
+    font-weight: 800;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#pet-profile-panel-header-buttons {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pet-profile-panel-header-button-img {
+    height: 50px;
+}
+
+
+.pet-profile-panel-header-line {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.pet-profile-info {
+    font-size: 40px;
+}
+
+.pet-profile-panel-header-line > #pet-breed {
+    margin-top: 20px;
+}
+
+.pet-profile-attributes-conteiner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pet-profile-attribute-conteiner {
+    width: 225px;
+    height: 225px;
+    border-radius: 60px;
+    box-shadow: var(--shadow-input);
+    color: white;
+    background-color: var(--app-orange);
+}
+
+#pet-attribute-block-weight {
+    background-color: var(--app-purple);
+}
+
+#pet-attribute-block-gender {
+    background-color: var(--app-green);
+}
+
+#pet-attribute-block-age {
+    background-color: var(--app-blue);
+}
+
+.pet-profile-attribute-value-area {
+    width: 100%;
+    height: 65%;
+    font-size: 90px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-sizing: border-box;
+}
+
+.pet-profile-attribute-name-area {
+    text-align: center;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.pet-profile-attribute-value-area > img {
+    height: 70%;
+}
+
+.pet-profile-attribute-links > .pet-profile-attribute-value-area {
+    height: 55%;
+}
+
+.pet-profile-attribute-links > .pet-profile-attribute-name-area {
+    height: 45%;
+    align-items: center;
+}

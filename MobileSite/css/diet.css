@@ -1,0 +1,324 @@
+.diet-card-description-line {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.to-diet-info {
+    width: 100%;
+}
+
+.diet-card {
+    height: 380px;
+    position: relative;
+}
+
+.diet-card-text {
+    width: 100%;
+    height: 280px;
+    padding: 35px 50px 10px 50px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.diet-card-title {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.diet-card-description {
+    font-size: 34px;
+}
+
+.diet-card-dose-area {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--app-brown);
+    border-radius: 0px 0px 70px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.diet-info-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#diet-info-title {
+    font-size: 60px;
+    text-align: left;
+    font-weight: 600;
+    width: 80%;
+    max-height: 300px;
+    overflow: scroll;
+}
+
+.diet-info-header-buttons {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.diet-info-header-button-img {
+    height: 50px;
+}
+
+.diet-grid-description {
+    margin: 50px 0px;
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template-areas: 
+        "food-card pet-data"
+        "food-card daily-size";
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: 220px 1fr;
+    grid-gap: 5%;
+}
+
+.diet-info-food-card {
+    grid-area: food-card;
+}
+
+.diet-info-pet-data {
+    grid-area: pet-data;
+}
+
+.diet-info-daily-size {
+    grid-area: daily-size;
+}
+
+.diet-info-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 55px;
+    border-color: none;
+    color: white;
+    box-shadow: var(--shadow-input);
+    position: relative;
+}
+
+.diet-info-food-card {
+    background-color: var(--app-orange);
+}
+
+.diet-info-food-flag {
+    width: 70px;
+    height: 70px;
+    background-color: var(--app-dark-green);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 0px 55px 00px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.diet-info-food-flag > img {
+    height: 70%;
+}
+
+.diet-info-pet-data {
+    background-color: var(--app-blue);
+}
+
+.diet-info-daily-size {
+    background-color: var(--app-pink);
+}
+
+.diet-info-card-title {
+    width: 100%;
+    height: 60px;
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.diet-info-card-description {
+    height: calc(100% - 60px);
+    width: 100%;
+    padding: 10px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.diet-info-food-card-title {
+    margin-bottom: 30px;
+}
+
+.diet-info-food-card-title-name {
+    font-size: 40px;
+    max-height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+
+.diet-info-food-card-title-brand {
+    font-size: 30px;
+}
+
+.diet-info-card-description-lines {
+    text-align: left;
+    font-size: 35px;
+}
+
+.diet-info-card-description-line {
+    margin: 10px 0px;
+}
+
+.diet-info-card-description-line > img {
+    height: 35px;
+}
+
+.diet-info-daily-size-value {
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.diet-info-table-diet {
+    text-align: left;
+    font-size: 50px;
+    font-weight: 700;
+    padding-left: 40px;
+}
+
+.table-portions-block {
+    margin: 10px 0px 50px 0px;
+    width: 100%;
+    position: relative;
+    height: 700px;
+    overflow: scroll;
+}
+
+.table-portions {
+    width: 100%;
+}
+
+.table-title-line {
+    width: 100%;
+    height: 90px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.table-time-title {
+    width: 25%;
+}
+
+.table-portion-title {
+    width: 35%;
+}
+
+.table-check-title {
+    width: 15%;
+}
+
+.table-buttons-title {
+    width: 25%;
+}
+
+.table-line > td {
+    height: 100px;
+    background-color: var(--app-beige);
+    border-top: 15px solid white;
+    border-bottom: 15px solid white;
+    
+}
+
+.table-value {
+
+}
+
+.table-value-input {
+    font-size: 45px;
+    color: var(--app-brown);
+    width: 80%;
+    height: 70px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    text-align: center;
+}
+
+
+.table-value-input::placeholder {
+    color: var(--app-brown);
+}
+
+.table-value-input-size
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.table-value-input-size::-ms-clear {
+    display: none;
+    
+}
+
+.table-value-size-label
+  {
+    font-size: 40px;
+    display: inline-block;
+      width: 100%;
+  }
+
+.table-input-size-measurement
+  {
+      position: relative;
+      
+  }
+
+.table-input-size-measurement::before
+  {
+      position: relative;
+    display: inline-block;
+    content: attr(data-val);
+    white-space: pre;
+      width: 90%;
+  }
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.table-check > input {
+    width: 40px;
+    height: 40px;
+}
+
+.table-value-size::after {
+    content: 'кг';
+}
+
+.table-button-block {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.table-button-block > button {
+    width: 45%;
+    height: 100%;
+}
+
+.table-button-block > button > img {
+    height: 45%;
+}
