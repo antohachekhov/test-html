@@ -23,13 +23,13 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 400;
-	src: url('../resource/Roboto-Regular.eot');
+	src: url('../resource/fonts/Roboto-Regular.eot');
 	src: local('Roboto')
-        url('../resource/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-		url('../resource/Roboto-Regular.ttf') format('truetype'),
-        url('../resource/Roboto-Regular.woff2') format('woff2'),
-        url('../resource/Roboto-Regular.svg#robotoregular') format('svg'),
-        url('../resource/Roboto-Regular.woff') format('woff');
+        url('../resource/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../resource/fonts/Roboto-Regular.ttf') format('truetype'),
+        url('../resource/fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../resource/fonts/Roboto-Regular.svg#robotoregular') format('svg'),
+        url('../resource/fonts/Roboto-Regular.woff') format('woff');
 }
 
 /* Medium */
@@ -37,13 +37,13 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 500;
-	src: url('../resource/Roboto-Medium.eot');
+	src: url('../resource/fonts/fonts/Roboto-Medium.eot');
 	src: local('Roboto')
-        url('../resource/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
-		url('../resource/Roboto-Medium.ttf') format('truetype'),
-        url('../resource/Roboto-Medium.woff2') format('woff2'),
-        url('../resource/Roboto-Medium.svg#robotomedium') format('svg'),
-        url('../resource/Roboto-Medium.woff') format('woff');
+        url('../resource/fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../resource/fonts/Roboto-Medium.ttf') format('truetype'),
+        url('../resource/fonts/Roboto-Medium.woff2') format('woff2'),
+        url('../resource/fonts/Roboto-Medium.svg#robotomedium') format('svg'),
+        url('../resource/fonts/Roboto-Medium.woff') format('woff');
 
 }
 
@@ -52,13 +52,13 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 700;
-	src: url('../resource/Roboto-Bold.eot');
+	src: url('../resourse/fonts/Roboto-Bold.eot');
 	src: local('Roboto')
-        url('../resource/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
-		url('../resource/Roboto-Bold.ttf') format('truetype'),
-        url('../resource/Roboto-Bold.woff2') format('woff2'),
-        url('../resource/Roboto-Bold.svg#robotobold') format('svg'),
-        url('../resource/Roboto-Bold.woff') format('woff');
+        url('../resource/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../resource/fonts/Roboto-Bold.ttf') format('truetype'),
+        url('../resource/fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../resource/fonts/Roboto-Bold.svg#robotobold') format('svg'),
+        url('../resource/fonts/Roboto-Bold.woff') format('woff');
 }
 
 /* Black */
@@ -66,13 +66,13 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 900;
-    src: url('../resource/Roboto-Black.eot');
+    src: url('../resource/fonts/Roboto-Black.eot');
 	src: local('Roboto')
-        url('../resource/Roboto-Black.eot?#iefix') format('embedded-opentype'),
-		url('../resource/Roboto-Black.ttf') format('truetype'),
-        url('../resource/Roboto-Black.woff2') format('woff2'),
-        url('../resource/Roboto-Black.svg#robotoblack') format('svg'),
-        url('../resource/Roboto-Black.woff') format('woff');
+        url('../resource/fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),
+		url('../resource/fonts/Roboto-Black.ttf') format('truetype'),
+        url('../resource/fonts/Roboto-Black.woff2') format('woff2'),
+        url('../resource/fonts/Roboto-Black.svg#robotoblack') format('svg'),
+        url('../resource/fonts/Roboto-Black.woff') format('woff');
 }
  
 
