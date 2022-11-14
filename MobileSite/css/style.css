@@ -24,8 +24,9 @@
 	font-style: normal;
 	font-weight: 400;
 	src: url('../resource/fonts/Roboto-Regular.eot');
-	src: url('../resource/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
-	  url('../resource/fonts/Roboto-Regular.ttf') format('truetype'),
+	src:
+        url('../resource/fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../resource/fonts/Roboto-Regular.ttf') format('truetype'),
         url('../resource/fonts/Roboto-Regular.woff2') format('woff2'),
         url('../resource/fonts/Roboto-Regular.svg#robotoregular') format('svg'),
         url('../resource/fonts/Roboto-Regular.woff') format('woff');
@@ -37,11 +38,10 @@
 	font-style: normal;
 	font-weight: 500;
 	src: url('../resource/fonts/fonts/Roboto-Medium.eot');
-	src: 
+	src:
         url('../resource/fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
-	  url('../resource/fonts/Roboto-Medium.ttf') format('truetype'),
+		url('../resource/fonts/Roboto-Medium.ttf') format('truetype'),
         url('../resource/fonts/Roboto-Medium.woff2') format('woff2'),
-        url('../resource/fonts/Roboto-Medium.svg#robotomedium') format('svg'),
         url('../resource/fonts/Roboto-Medium.woff') format('woff');
 
 }
@@ -52,11 +52,10 @@
 	font-style: normal;
 	font-weight: 700;
 	src: url('../resource/fonts/Roboto-Bold.eot');
-	src: 
+	src:
         url('../resource/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
-	  url('../resource/fonts/Roboto-Bold.ttf') format('truetype'),
+		url('../resource/fonts/Roboto-Bold.ttf') format('truetype'),
         url('../resource/fonts/Roboto-Bold.woff2') format('woff2'),
-        url('../resource/fonts/Roboto-Bold.svg#robotobold') format('svg'),
         url('../resource/fonts/Roboto-Bold.woff') format('woff');
 }
 
@@ -65,12 +64,11 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 900;
-    	src: url('../resource/fonts/Roboto-Black.eot');
+    src: url('../resource/fonts/Roboto-Black.eot');
 	src:
         url('../resource/fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),
-	  url('../resource/fonts/Roboto-Black.ttf') format('truetype'),
+		url('../resource/fonts/Roboto-Black.ttf') format('truetype'),
         url('../resource/fonts/Roboto-Black.woff2') format('woff2'),
-        url('../resource/fonts/Roboto-Black.svg#robotoblack') format('svg'),
         url('../resource/fonts/Roboto-Black.woff') format('woff');
 }
  
