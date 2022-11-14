@@ -24,7 +24,9 @@
 	font-style: normal;
 	font-weight: 400;
 	src: local('Roboto')
-		url('../resource/Roboto-Regular.ttf') format('ttf');
+		url('../resource/Roboto-Regular.ttf') format('ttf'),
+        url('../resource/Roboto-Regular.woff2') format('woff2'),
+        url('../resource/Roboto-Regular.woff') format('woff');
 }
 
 /* Medium */
@@ -33,7 +35,10 @@
 	font-style: normal;
 	font-weight: 500;
 	src: local('Roboto')
-		url('../resource/Roboto-Medium.ttf') format('ttf');
+		url('../resource/Roboto-Medium.ttf') format('ttf'),
+        url('../resource/Roboto-Medium.woff2') format('woff2'),
+        url('../resource/Roboto-Medium.woff') format('woff');
+
 }
 
 /* Bold */
@@ -42,7 +47,9 @@
 	font-style: normal;
 	font-weight: 700;
 	src: local('Roboto')
-		url('../resource/Roboto-Bold.ttf') format('ttf');
+		url('../resource/Roboto-Bold.ttf') format('ttf'),
+        url('../resource/Roboto-Bold.woff2') format('woff2'),
+        url('../resource/Roboto-Bold.woff') format('woff');
 }
 
 /* Black */
@@ -51,7 +58,9 @@
 	font-style: normal;
 	font-weight: 900;
 	src: local('Roboto')
-		url('../resource/Roboto-Black.ttf') format('ttf');
+		url('../resource/Roboto-Black.ttf') format('ttf'),
+        url('../resource/Roboto-Black.woff2') format('woff2'),
+        url('../resource/Roboto-Black.woff') format('woff');
 }
  
 
