@@ -51,7 +51,7 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 700;
-	src: url('../resourse/fonts/Roboto-Bold.eot');
+	src: url('../resource/fonts/Roboto-Bold.eot');
 	src: 
         url('../resource/fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
 	  url('../resource/fonts/Roboto-Bold.ttf') format('truetype'),
@@ -65,7 +65,7 @@
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 900;
-    src: url('../resource/fonts/Roboto-Black.eot');
+    	src: url('../resource/fonts/Roboto-Black.eot');
 	src:
         url('../resource/fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),
 	  url('../resource/fonts/Roboto-Black.ttf') format('truetype'),
@@ -76,7 +76,7 @@
  
 
 * {
-    font-family: "Roboto";
+    font-family: 'Roboto';
 }
 
 body,

@@ -6,7 +6,7 @@ function active_inputs(el) {
     
     let img = el.querySelector("img");    
     if (isActive == "false"){
-        img.src = "../resourse/table-save.svg";
+        img.src = "../resource/table-save.svg";
         el.dataset.isActive = true;
     
         for (let input of inputs){
@@ -16,7 +16,7 @@ function active_inputs(el) {
         
     }
     else{
-        img.src = "../resourse/edit.svg";
+        img.src = "../resource/edit.svg";
         el.dataset.isActive = false;
         for (let input of inputs){
             input.disabled = true;

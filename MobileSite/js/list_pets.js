@@ -23,7 +23,7 @@ function writeOnHtmlPagePetsList(UserId, PetName, PetAge, PetBreed, PetPhoto, Pe
     divCardImg.className = "pet-card-image"
     if(PetPhoto == "" || PetPhoto == null)
      {
-     divCardImg.src = "/MobileSite/resourse/img.png"
+     divCardImg.src = "/MobileSite/resource/img.png"
      }
     else {
     divCardImg.src = PetPhoto //фото Ирочки
