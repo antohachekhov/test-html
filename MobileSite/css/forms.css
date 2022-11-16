@@ -18,6 +18,12 @@ input:focus {
 
 .sign-in-form {
     margin-bottom: 30px;
+    width: 100%;
+}
+
+.sign-form-line {
+    width: 100%;
+    position: relative;
 }
 
 .sign-in-form-item {
@@ -94,6 +100,10 @@ label input[type=file]{
 
 input[type=email]:invalid {
     background-color: var(--app-invalid-input);
+}
+
+input::placeholder {
+    background-color: none;
 }
 
 .get-photo-block {
@@ -311,6 +321,7 @@ option {
     display: inline-block;
     height: 100%;
     width: 70px;
+    height: 100px;
     visibility: hidden;
 }
 
@@ -434,19 +445,43 @@ option {
     border-radius: 50%;
 }
 
+.login-form {
+    padding: 30px 0px 30px 0px;
+    margin: 0px;
+    position: relative;
+}
+
 .login-form > input {
     background-color: var(--app-beige);
     color: var(--app-brown);
 }
 
 .login-form > input::placeholder {
-    background-color: var(--app-beige);
     color: #5E5E5E;
 }
 
 .login-form > input::-webkit-calendar-picker-indicator {
     filter: invert(0);
     padding-right: 30px;
+}
+
+.obligatory-input {
+    position: absolute;
+    color: orangered;
+    left: 110px;
+    top: 15px;
+    font-size: 30px;
+    font-weight: 400;
+    height: 30px;
+    white-space: nowrap;
+}
+
+.obligatory-input-explanation {
+    color: orangered;
+    font-size: 30px;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 60px;
 }
 
 .reg-form-acceptance {
@@ -472,6 +507,15 @@ option {
     font-size: 40px;
     background-color: var(--app-orange);
     margin-bottom: 60px;
+}
+
+.reg-form-button:disabled {
+    background-color: gray;
+    color: black;
+}
+
+.food-calculation {
+    text-align: center;
 }
 
 .food-calculation-form {

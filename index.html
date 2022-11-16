@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru-RU">
 <head>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#FF995C">
-
+    
     <title>PetHabit</title>
     <link rel="stylesheet" href="./MobileSite/css/style.css"> 
     <link rel="stylesheet" href="./MobileSite/css/forms.css">
@@ -19,13 +19,23 @@
             <img src="./MobileSite/resource/logo.svg" alt="Логотип">
         </div>
         <div class="sign-in-form">
-            <input type="text" placeholder="Email / Телефон" class="sign-in-form-item">
-            <input type="text" placeholder="Пароль" class="sign-in-form-item">
+           <div class="sign-form-line">
+                <input required type="text" placeholder="Email / Телефон" class="sign-in-form-item">
+           </div>
+           <div class="sign-form-line">
+               <input required id="password" type="password" placeholder="Пароль" class="sign-in-form-item input-password">
+                <button class="password-control" onclick="show_password_signin(this)">
+                    <img src="./MobileSite/resource/eye-open-brown.svg" alt="">
+                </button>      
+           </div> 
+                
         </div>
         <div class="sign-in-buttons">
             <a href="./MobileSite/html/Account.html" class="sign-in-button">Войти</a>
             <a href="./MobileSite/html/LogIn.html"><div class="sign-in-button">Зарегистрироваться</div></a>
         </div>
     </div>
+    
+    <script src="./MobileSite/js/password.js"></script>
 </body>
 </html>

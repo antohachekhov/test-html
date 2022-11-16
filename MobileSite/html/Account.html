@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="ru-RU">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#FF995C">
     <title>Личный кабинет</title>
     <link rel="stylesheet" href="../css/style.css"> 
     <link rel="stylesheet" href="../css/bottom-sheet.css">
@@ -47,7 +47,13 @@
                 <a href="./PetsList.html" class="account-content-card-more-info">Открыть список</a> 
             </div>
             <div class="account-pet-list-container">
-              <a href="./PetAccount.html" class="card-mini">
+               <div class="mini-new-pet">
+                  <button onclick="show_bottom_sheet_pet_form()" class="mini-button plus">
+                      +
+                  </button>   
+              </div>
+                <div class="account-pet-list"> 
+                  <a href="./PetAccount.html" class="card-mini">
                  <div class="card-mini-img">
                       <img src="../resource/shark.jpg" alt="">    
                   </div>
@@ -55,43 +61,40 @@
                       Акула&nbsp;из&nbsp;Икеи
                   </div>
               </a>
-              <a href="./PetAccount.html" class="card-mini">
-                 <div class="card-mini-img">
-                      <img src="../resource/pet.jpg" alt="">    
-                  </div>
-                  <div class="card-mini-title">
-                      Акула&nbsp;из&nbsp;Икеи
-                  </div>
-              </a>
-              <a href="./PetAccount.html" class="card-mini">
-                 <div class="card-mini-img">
-                      <img src="../resource/pet4.jpg" alt="">    
-                  </div>
-                  <div class="card-mini-title">
-                      Акула&nbsp;из&nbsp;Икеи
-                  </div>
-              </a>
-              <a href="./PetAccount.html" class="card-mini">
-                 <div class="card-mini-img">
-                      <img src="../resource/pet3.jpg" alt="">    
-                  </div>
-                  <div class="card-mini-title">
-                      Акула&nbsp;из&nbsp;Икеи
-                  </div>
-              </a>
-              <a href="./PetAccount.html" class="card-mini">
-                 <div class="card-mini-img">
-                      <img src="../resource/pet5.jpg" alt="">    
-                  </div>
-                  <div class="card-mini-title">
-                      Акула&nbsp;из&nbsp;Икеи
-                  </div>
-              </a>
-              <div class="mini-new-pet">
-                  <button onclick="show_bottom_sheet_pet_form()" class="mini-button plus">
-                      +
-                  </button>    
-              </div>
+                  <a href="./PetAccount.html" class="card-mini">
+                     <div class="card-mini-img">
+                          <img src="../resource/pet.jpg" alt="">    
+                      </div>
+                      <div class="card-mini-title">
+                          Акула&nbsp;из&nbsp;Икеи
+                      </div>
+                  </a>
+                  <a href="./PetAccount.html" class="card-mini">
+                     <div class="card-mini-img">
+                          <img src="../resource/pet4.jpg" alt="">    
+                      </div>
+                      <div class="card-mini-title">
+                          Акула&nbsp;из&nbsp;Икеи
+                      </div>
+                  </a>
+                  <a href="./PetAccount.html" class="card-mini">
+                     <div class="card-mini-img">
+                          <img src="../resource/pet3.jpg" alt="">    
+                      </div>
+                      <div class="card-mini-title">
+                          Акула&nbsp;из&nbsp;Икеи
+                      </div>
+                  </a>
+                  <a href="./PetAccount.html" class="card-mini">
+                     <div class="card-mini-img">
+                          <img src="../resource/pet5.jpg" alt="">    
+                      </div>
+                      <div class="card-mini-title">
+                          Акула&nbsp;из&nbsp;Икеи
+                      </div>
+                  </a>
+                </div>
+                
               
                <!--
                 <button class="account-pet-list-arrow account-pet-list-arrow-left">
@@ -122,6 +125,7 @@
                 </button>
                 -->
             </div>
+            
         </div>
         <a class="width-account-block-link" href="#">
             <div class="width-account-block">
