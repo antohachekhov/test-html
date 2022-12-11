@@ -164,7 +164,7 @@ input::placeholder {
 }
 
 .pet-reg-date {
-    
+    -webkit-appearance: none;
 }
 
 .pet-reg-date::placeholder {
