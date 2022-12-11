@@ -12,6 +12,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./MobileSite/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./MobileSite/icon/favicon-16x16.png">
     <link rel="manifest" href="./MobileSite/icon/site.webmanifest">
+    <link rel="stylesheet" href="./MobileSite/css/forms.css">
+    <script type="module" src="/MobileSite/js/logic.js"></script>
 </head>
 <body style="background-color: #FFF7EA">
     <div class="sign-in-content">
@@ -20,19 +22,18 @@
         </div>
         <div class="sign-in-form">
            <div class="sign-form-line">
-                <input required type="text" placeholder="Email / Телефон" class="sign-in-form-item">
+                <input id="mail" required type="text" placeholder="Email / Телефон" class="sign-in-form-item white-input">
            </div>
            <div class="sign-form-line">
-               <input required id="password" type="password" placeholder="Пароль" class="sign-in-form-item input-password">
+               <input required id="password" type="password" placeholder="Пароль" class="sign-in-form-item input-password white-input">
                 <button class="password-control" onclick="show_password_signin(this)">
                     <img src="./MobileSite/resource/eye-open-brown.svg" alt="">
                 </button>      
            </div> 
-                
         </div>
         <div class="sign-in-buttons">
-            <a href="./MobileSite/html/Account.html" class="sign-in-button">Войти</a>
-            <a href="./MobileSite/html/LogIn.html"><div class="sign-in-button">Зарегистрироваться</div></a>
+            <a href="./MobileSite/html/Account.html" id="log-in" class="sign-in-button orange-button">Войти</a>
+            <a href="./MobileSite/html/LogIn.html"><div class="sign-in-button orange-button">Зарегистрироваться</div></a>
         </div>
     </div>
     

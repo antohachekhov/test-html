@@ -1,59 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru-RU">
+
 <head>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#FF995C">
     <title>Личный кабинет</title>
-    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/bottom-sheet.css">
     <link rel="stylesheet" href="../css/forms.css">
-    
     <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
     <link rel="manifest" href="../icon/site.webmanifest">
-    
+    <script type="module" src="/MobileSite/js/logic.js"></script>
 </head>
+
 <body style="background-color: #FFF7EA">
     <div class="static-header header-account"> <span class="title title-left">ЛИЧНЫЙ КАБИНЕТ</span>
         <div class="header-account-buttons">
-            <a href="./Settings.html" class="header-account-button"> <img src="../resource/settings.svg" alt="Настройки"> </a>
-            <button href="#" class="header-account-button"> <img src="../resource/exit.svg" alt="Выход"> </button>
+            <a id="acc-settings" href="./Settings.html" class="header-account-button"> <img src="../resource/settings.svg" alt="Настройки"> </a>
+            <button id="button-exit" href="/index.html" class="header-account-button"> <img src="../resource/exit.svg" alt="Выход"> </button>
         </div>
     </div>
     <div class="content-account">
-        <div class="card account-card"> <img src="../resource/pet.jpg" alt="" class="card-image">
-            <div class="account-info"> <span class="account-info-login">antohachekhov</span> <span id="account-info-name">Бортников Никита Евгеньевич </span> </div>
+        <div class="card account-card"> <img id="lk_image" src="" alt="" class="card-image">
+            <div class="account-info"> <span id="login" class="account-info-login">default</span> <span id="account-info-name">Иванов Иван Иванович</span> </div>
         </div>
         <div class="account-content-card-container">
-            <div class="account-content-card-header"> 
-                <span class="account-content-card-title">Совет дня</span> 
-                <a href="./Advices.html" class="account-content-card-more-info">Показать все</a> 
-            </div>
+            <div class="account-content-card-header"> <span class="account-content-card-title">Совет дня</span> <a id="show-all-advices" href="./Advices.html" class="account-content-card-more-info">Показать все</a> </div>
             <a href="#" class="advice-card-link">
-                <div class="card">
-                   <img src="../resource/pet3.jpg" alt="" class="card-image"> 
-                   <div class="advice-card-text">
-                       <div class="card-title">Новые крылья своей птичке</div> 
-                        <div class="advice-card-description">Это революция в сфере птичьей реанимации. Походит даже людям! Ванга это предсказывала!</div> 
-                   </div>
-                    
+                <div class="card scale-button"> <img id="advice_image" src="" alt="" class="card-image">
+                    <div class="advice-card-text">
+                        <div id="advice_title" class="card-title">Новые крылья своей птичке</div>
+                        <div id="advice_desc" class="advice-card-description">Это революция в сфере птичьей реанимации. Походит даже людям! Ванга это предсказывала!</div>
+                    </div>
                 </div>
             </a>
         </div>
         <div class="account-content-card-container">
-            <div class="account-content-card-header"> 
-                <span class="account-content-card-title">Мои питомцы</span> 
-                <a href="./PetsList.html" class="account-content-card-more-info">Открыть список</a> 
-            </div>
-            <div class="account-pet-list-container">
-               <div class="mini-new-pet">
-                  <button onclick="show_bottom_sheet_pet_form()" class="mini-button plus">
-                      +
-                  </button>   
-              </div>
-                <div class="account-pet-list"> 
-                  <a href="./PetAccount.html" class="card-mini">
+            <div class="account-content-card-header"> <span class="account-content-card-title">Мои питомцы</span> <a id="show-all-pets" href="./PetsList.html" class="account-content-card-more-info">Показать всех</a> </div>
+            <div id="pets-list-in-lk" class="account-pet-list-container">
+                <div class="card-mini">
+                    <button id="pets_list_plus1" onclick="show_bottom_sheet_pet_form()" class="mini-button plus brown-button"> + </button>
+                    <div class="card-mini-title">
+                      Новый&nbsp;питомец
+                  </div>
+                </div>
+                <a href="./PetAccount.html" class="card-mini">
                  <div class="card-mini-img">
                       <img src="../resource/shark.jpg" alt="">    
                   </div>
@@ -85,107 +78,69 @@
                           Акула&nbsp;из&nbsp;Икеи
                       </div>
                   </a>
-                  <a href="./PetAccount.html" class="card-mini">
-                     <div class="card-mini-img">
-                          <img src="../resource/pet5.jpg" alt="">    
-                      </div>
-                      <div class="card-mini-title">
-                          Акула&nbsp;из&nbsp;Икеи
-                      </div>
-                  </a>
-                </div>
-                
-              
-               <!--
-                <button class="account-pet-list-arrow account-pet-list-arrow-left">
-                    <img src="../resource/pet-left.svg" alt="Назад" class="account-pet-list-arrow-img">
-                </button>
-                <a href="./PetAccount.html" class="to-pet-profile">
-                    
-                      <div class="card"> 
-                       <img src="../resource/shark.jpg" alt="" class="card-image">
-                        <div class="pet-card-text">
-                            <div class="pet-card-name">Акула из Икеа</div>
-                            <div class="pet-card-description">
-                                <div class="pet-card-age-line one-line">
-                                    <div class="pet-card-desc-title">Возраст</div>
-                                    <div class="pet-card-desc-value">11 месяцев</div>
-                                </div>
-                                <div class="pet-card-breed-line one-line">
-                                    <div class="pet-card-breed-title pet-card-desc-title">Порода</div>
-                                    <div class="pet-card-breed-value  pet-card-desc-value">Акула Паролоновая</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </a>
-                <button class="account-pet-list-arrow account-pet-list-arrow-right">
-                    <img src="../resource/pet-right.svg" alt="Назад" class="account-pet-list-arrow-img">
-                </button>
-                -->
             </div>
-            
         </div>
         <a class="width-account-block-link" href="#">
-            <div class="width-account-block">
-                <img src="../resource/clinic.svg" alt="Клиники" class="width-account-block-img">
-                <div class="width-account-block-text">Ближайшие ветеринарные клиники</div>
+            <div class="width-account-block orange-button"> <img src="../resource/clinic.svg" alt="Клиники" class="width-account-block-img">
+                <div href="https://2gis.ru/search/ветклиники/rubricId/205" class="width-account-block-text">Ближайшие ветеринарные клиники</div>
             </div>
         </a>
-    
         <div class="dark">
             <div class="bottom-sheet pet-reg">
                 <button onclick="hide_bottom_sheet_pet_form()" class="bottom-sheet-close"> <img src="../resource/arrow.svg" alt="Назад" class="back"> </button> <span class="bottom-sheet-title">РЕГИСТРАЦИЯ ПИТОМЦА</span>
                 <div class="reg-pet-form">
+                <!--<form> -->
                     <div class="reg-form-line">
                         <label class="get-photo">
                             <input id="pet_photo" type="file" name="file[]" multiple accept="image/*">
-                            <div class="get-photo-block"> <img src="../resource/camera.svg" alt="Загрузить изображение"> </div>
+                            <div class="get-photo-block"> <img id="photo_img" src="../resource/choose_photo.jpg" alt="Загрузить изображение"> </div>
                         </label>
                         <div class="pet-reg-name-block">
                             <input id="pet_name" type="text" class="pet-reg-input-name" placeholder="Имя питомца"> </div>
                     </div>
-                    <div class="reg-form-line"> <img src="../resource/birth.svg" alt="Дата рождения" class="form-emoji">
-                        <input id="pet_date_of_birth" placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" onmouseover="(this.type='date')" class="pet-reg-date reg-form-input"> </div>
+                    <div class="reg-form-line"> 
+                       <img src="../resource/birth.svg" alt="Дата рождения" class="form-emoji">
+                        <input id="pet_date_of_birth" placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" onmouseover="(this.type='date')" class="pet-reg-date reg-form-input orange-input"> </div>
                     <div class="reg-form-line"> <img src="../resource/dog.svg" alt="Дата рождения" class="form-emoji">
-                        <select id="pet_breed" name="breed" class="reg-form-input">
+                        <select id="pet_breed" name="breed" class="reg-form-input orange-input">
                             <option selected hidden>Выберите породу</option>
-                            <option value="s1">Порода 1</option>
-                            <option value="s2">Порода 2</option>
-                            <option value="s3">Порода 3</option>
-                            <option value="s3">Порода 4</option>
                         </select>
                     </div>
                     <div class="reg-form-line"> <img src="../resource/scales.svg" alt="Масса" class="form-emoji">
-                        <input id="pet_weight" placeholder="Масса питомца" type="text" class="reg-form-input"> </div>
-                    <div class="reg-form-line"> <img src="../resource/gender.svg" alt="Пол питомца" class="form-emoji">
-                        <select id="pet_gender" name="gender" class="reg-form-input">
-                            <option selected hidden>Выберите пол</option>
-                            <option value="s1">Мужской</option>
-                            <option value="s2">Женский</option>
+                        <input id="pet_weight" placeholder="Масса питомца" type="number" class="reg-form-input orange-input reg-form-input-date">
+                        <div class="pet-reg-unit">кг</div> </div>
+                    <div class="reg-form-line"> <img src="../resource/activity.svg" alt="Активность питомца" class="form-emoji">
+                        <select id="edit-activity" name="activity" class="reg-form-input orange-input">
+                           <option selected hidden>Укажите активность питомца</option>
+                            <option value="1">Низкая активность</option>
+                            <option value="2">Средняя активность</option>
+                            <option value="3">Высокая активность</option>
                         </select>
                     </div>
-                    <div class="reg-form-line"> 
-                   <img src="../resource/docs.svg" alt="Масса" class="form-emoji">
-                    <label class="button-pet-reg-docs">
-                        <input type="file" name="file[]" multiple accept="application/pdf" id="pet-form-input-pet-docs">	
-                        <div class="pet-reg-input-docs" id="pet-form-uploaded-docs"> 
-                            <span class="plus">+</span> 
-                        </div>
-                    </label>
-                    <div class="docs-flag-area">Паспорт питомца</div>
-                </div>
-                    <div class="reg-form-line">
-                        <button class="width-button width-button-text"> Зарегистрировать питомца </button>
+                    <div class="reg-form-line"> <img src="../resource/gender.svg" alt="Пол питомца" class="form-emoji">
+                        <select id="pet_gender" name="gender" class="reg-form-input orange-input">
+                            <option selected hidden>Выберите пол</option>
+                            <option value="0">Мужской</option>
+                            <option value="1">Женский</option>
+                        </select>
                     </div>
+                    <div class="reg-form-line"> <img src="../resource/docs.svg" alt="Масса" class="form-emoji">
+                        <label class="button-pet-reg-docs">
+                            <input type="file" name="file[]" multiple accept="application/pdf" id="pet-form-input-pet-docs">
+                            <div class="pet-reg-input-docs" id="pet-form-uploaded-docs"> <span class="plus" id='pet-form-unloaded-docs-flag'>+</span> </div>
+                        </label>
+                        <div class="docs-flag-area">Паспорт питомца</div>
+                    </div>
+                    <div class="reg-form-line">
+                        <button id="reg1" class="width-button width-button-text brown-button"> Зарегистрировать питомца </button>
+                    </div>
+                <!-- </form> -->
                 </div>
             </div>
-        </div>    
-        
+        </div>
     </div>
-    
     <script src="../js/bottom-sheet.js"></script>
+    <script src="../js/form.js"></script>
 </body>
 
 </html>

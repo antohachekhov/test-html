@@ -12,12 +12,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
     <link rel="manifest" href="../icon/site.webmanifest"> </head>
+<script type="module" src="/MobileSite/js/logic.js"></script>
 
 <body style="background-color: while">
     <div class="header header-panel">
         <div class="header-content">
-            <a href="javascript:history.back()" class="button-back"> <img src="../resource/back-brown.svg" alt="Назад" class="back"> </a>
+            <a id="petacc-a" href="javascript:history.back()" class="button-back"> <img src="../resource/back-brown.svg" alt="Назад" class="back"> </a>
         <div class="title">СПИСОК ПИТОМЦЕВ</div>
+        <a href="./Account.html" class="button-back">
+                <img src="../resource/home.svg" alt="">
+            </a>
         </div>
         <!--
             <div class="region-search"> 
@@ -29,7 +33,7 @@
         <div class="list-cards" id="list_pets">
             <div class="list-card">
                 <a href="#" class="to-pet-profile">
-                    <div class="card"> <img src="../resource/pet.jpg" alt="" class="card-image">
+                    <div class="card scale-button"> <img src="../resource/pet.jpg" alt="" class="card-image">
                         <div class="pet-card-text">
                             <div class="pet-card-name">Никитка</div>
                             <div class="card-description">
@@ -46,138 +50,68 @@
                     </div>
                 </a>
             </div>
-            <div class="list-card">
-                <a href="#" class="to-pet-profile">
-                    <div class="card"> <img src="../resource/pet3.jpg" alt="" class="card-image">
-                        <div class="pet-card-text">
-                            <div class="pet-card-name">Сашуля</div>
-                            <div class="card-description">
-                                <div class="pet-card-age-line one-line">
-                                    <div class="pet-card-desc-title">Возраст</div>
-                                    <div class="pet-card-desc-value">22</div>
-                                </div>
-                                <div class="pet-card-breed-line one-line">
-                                    <div class="pet-card-breed-title pet-card-desc-title">Порода</div>
-                                    <div class="pet-card-breed-value  pet-card-desc-value">Человек-разумный</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="list-card">
-                <a href="#" class="to-pet-profile">
-                    <div class="card"> <img src="../resource/pet4.jpg" alt="" class="card-image">
-                        <div class="pet-card-text">
-                            <div class="pet-card-name">Ирочка</div>
-                            <div class="card-description">
-                                <div class="pet-card-age-line one-line">
-                                    <div class="pet-card-desc-title">Возраст</div>
-                                    <div class="pet-card-desc-value">22</div>
-                                </div>
-                                <div class="pet-card-breed-line one-line">
-                                    <div class="pet-card-breed-title pet-card-desc-title">Порода</div>
-                                    <div class="pet-card-breed-value  pet-card-desc-value">Человек-разумный</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="list-card">
-                <a href="#" class="to-pet-profile">
-                    <div class="card"> <img src="../resource/pet5.jpg" alt="" class="card-image">
-                        <div class="pet-card-text">
-                            <div class="pet-card-name">Серёженька</div>
-                            <div class="card-description">
-                                <div class="pet-card-age-line one-line">
-                                    <div class="pet-card-desc-title">Возраст</div>
-                                    <div class="pet-card-desc-value">22</div>
-                                </div>
-                                <div class="pet-card-breed-line one-line">
-                                    <div class="pet-card-breed-title pet-card-desc-title">Порода</div>
-                                    <div class="pet-card-breed-value  pet-card-desc-value">Человек-разумный</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="list-card">
-                <a href="#" class="to-pet-profile">
-                    <div class="card"> <img src="../resource/pet5.jpg" alt="" class="card-image">
-                        <div class="pet-card-text">
-                            <div class="pet-card-name">Серёженька</div>
-                            <div class="card-description">
-                                <div class="pet-card-age-line one-line">
-                                    <div class="pet-card-desc-title">Возраст</div>
-                                    <div class="pet-card-desc-value">22</div>
-                                </div>
-                                <div class="pet-card-breed-line one-line">
-                                    <div class="pet-card-breed-title pet-card-desc-title">Порода</div>
-                                    <div class="pet-card-breed-value  pet-card-desc-value">Человек-разумный</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            
         </div>
         <button onclick="show_bottom_sheet_pet_form()" class="button-new-item">
-            <div class="width-button plus">+</div>
+            <div id="pets_list_plus1" class="width-button plus brown-button scale-button">+</div>
         </button>
         <div class="dark">
             <div class="bottom-sheet pet-reg">
                 <button onclick="hide_bottom_sheet_pet_form()" class="bottom-sheet-close"> <img src="../resource/arrow.svg" alt="Назад" class="back"> </button> <span class="bottom-sheet-title">РЕГИСТРАЦИЯ ПИТОМЦА</span>
                 <div class="reg-pet-form">
+                <!--<form> -->
                     <div class="reg-form-line">
                         <label class="get-photo">
                             <input id="pet_photo" type="file" name="file[]" multiple accept="image/*">
-                            <div class="get-photo-block"> <img src="../resource/camera.svg" alt="Загрузить изображение"> </div>
+                            <div class="get-photo-block"> <img id="photo_img" src="../resource/choose_photo.jpg" alt="Загрузить изображение"> </div>
                         </label>
                         <div class="pet-reg-name-block">
                             <input id="pet_name" type="text" class="pet-reg-input-name" placeholder="Имя питомца"> </div>
                     </div>
-                    <div class="reg-form-line"> <img src="../resource/birth.svg" alt="Дата рождения" class="form-emoji">
-                        <input id="pet_date_of_birth" placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date reg-form-input"> </div>
+                    <div class="reg-form-line"> 
+                       <img src="../resource/birth.svg" alt="Дата рождения" class="form-emoji">
+                        <input id="pet_date_of_birth" placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" onmouseover="(this.type='date')" class="pet-reg-date reg-form-input orange-input"> </div>
                     <div class="reg-form-line"> <img src="../resource/dog.svg" alt="Дата рождения" class="form-emoji">
-                        <select id="pet_breed" name="breed" class="reg-form-input">
+                        <select id="pet_breed" name="breed" class="reg-form-input orange-input">
                             <option selected hidden>Выберите породу</option>
-                            <option value="s1">Порода 1</option>
-                            <option value="s2">Порода 2</option>
-                            <option value="s3">Порода 3</option>
-                            <option value="s3">Порода 4</option>
                         </select>
                     </div>
                     <div class="reg-form-line"> <img src="../resource/scales.svg" alt="Масса" class="form-emoji">
-                        <input id="pet_weight" placeholder="Масса питомца" type="text" class="reg-form-input"> </div>
-                    <div class="reg-form-line"> <img src="../resource/gender.svg" alt="Пол питомца" class="form-emoji">
-                        <select id="pet_gender" name="gender" class="reg-form-input">
-                            <option selected hidden>Выберите пол</option>
-                            <option value="s1">Мужской</option>
-                            <option value="s2">Женский</option>
+                        <input id="pet_weight" placeholder="Масса питомца" type="number" class="reg-form-input orange-input reg-form-input-date">
+                        <div class="pet-reg-unit">кг</div> </div>
+                    <div class="reg-form-line"> <img src="../resource/activity.svg" alt="Активность питомца" class="form-emoji">
+                        <select id="edit-activity" name="activity" class="reg-form-input orange-input">
+                           <option selected hidden>Укажите активность питомца</option>
+                            <option value="1">Низкая активность</option>
+                            <option value="2">Средняя активность</option>
+                            <option value="3">Высокая активность</option>
                         </select>
                     </div>
-                    <div class="reg-form-line"> 
-                   <img src="../resource/docs.svg" alt="Масса" class="form-emoji">
-                    <label class="button-pet-reg-docs">
-                        <input type="file" name="file[]" multiple accept="application/pdf" id="pet-form-input-pet-docs">	
-                        <div class="pet-reg-input-docs" id="pet-form-uploaded-docs"> 
-                            <span class="plus">+</span> 
-                        </div>
-                    </label>
-                    <div class="docs-flag-area">Паспорт питомца</div>
-                </div>
+                    <div class="reg-form-line"> <img src="../resource/gender.svg" alt="Пол питомца" class="form-emoji">
+                        <select id="pet_gender" name="gender" class="reg-form-input orange-input">
+                            <option selected hidden>Выберите пол</option>
+                            <option value="0">Мужской</option>
+                            <option value="1">Женский</option>
+                        </select>
+                    </div>
+                    <div class="reg-form-line"> <img src="../resource/docs.svg" alt="Масса" class="form-emoji">
+                        <label class="button-pet-reg-docs">
+                            <input type="file" name="file[]" multiple accept="application/pdf" id="pet-form-input-pet-docs">
+                            <div class="pet-reg-input-docs" id="pet-form-uploaded-docs"> <span class="plus" id='pet-form-unloaded-docs-flag'>+</span> </div>
+                        </label>
+                        <div class="docs-flag-area">Паспорт питомца</div>
+                    </div>
                     <div class="reg-form-line">
-                        <button class="width-button width-button-text"> Зарегистрировать питомца </button>
+                        <button id="reg1" class="width-button width-button-text brown-button scale-button"> Зарегистрировать питомца </button>
                     </div>
                 </div>
+                </div>
             </div>
-        </div>
     </div>
     
     <script src="../js/bottom-sheet.js"></script>
     <script src="../js/header-scroll.js"></script>
+    <script src="../js/form.js"></script>
 </body>
 
 </html>

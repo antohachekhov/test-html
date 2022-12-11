@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
     <link rel="manifest" href="../icon/site.webmanifest">
+    <script type="module" src="/MobileSite/js/logic.js"></script>
     
 </head>
 <body style="background-color: #43210D">
@@ -25,32 +26,28 @@
             <div class="reg-form-line login-form"> 
                <span class="obligatory-input">*</span>
                <img src="../resource/surname.svg" alt="Фамилия" class="form-emoji">
-                <input required id="reg-lastname" placeholder="Фамилия" type="text" class="reg-form-input" onchange="change_button()"> </div>
+                <input required id="reg-lastname" placeholder="Фамилия" type="text" class="reg-form-input white-input" onchange="change_button()"> </div>
             <div class="reg-form-line login-form"> 
                <span class="obligatory-input">*</span>
                <img src="../resource/name.svg" alt="Имя" class="form-emoji">
-                <input required id="reg-firstname" placeholder="Имя" type="text" class="reg-form-input" onchange="change_button()"> </div>
+                <input required id="reg-firstname" placeholder="Имя" type="text" class="reg-form-input white-input" onchange="change_button()"> </div>
             <div class="reg-form-line login-form"> <img src="../resource/patronymic.svg" alt="Отчество" class="form-emoji">
-                <input id="reg-patronymic" placeholder="Отчество" type="text" class="reg-form-input"> </div>
+                <input id="reg-patronymic" placeholder="Отчество" type="text" class="reg-form-input white-input"> </div>
             <div class="reg-form-line login-form"> 
                <span class="obligatory-input">*</span>
                <img src="../resource/login.svg" alt="Логин" class="form-emoji">
-                <input id="reg-nickname" placeholder="Никнейм" type="text" class="reg-form-input" onchange="change_button()"> </div>
+                <input id="reg-nickname" placeholder="Никнейм" type="text" class="reg-form-input white-input" onchange="change_button()"> </div>
             <div class="reg-form-line login-form"> 
                <span class="obligatory-input">*</span>
                <img src="../resource/e-mail.svg" alt="Почта" class="form-emoji">
-                <input id="reg-mail" placeholder="E-mail" type="email" class="reg-form-input" onchange="change_button()"> 
+                <input id="reg-mail" placeholder="E-mail" type="email" class="reg-form-input white-input" onchange="change_button()"> 
             </div>
-            <!--
-               <div class="reg-form-line login-form"> <img src="../resource/birth.svg" alt="Дата рождения" class="form-emoji">
-                <input placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date reg-form-input"> </div>
-            -->
                <div class="reg-form-line login-form"> <img src="../resource/phone.svg" alt="Телефон" class="form-emoji">
-                <input placeholder="Номер телефона" type="text" class="reg-form-input"> </div>
+                <input id="reg-phone" placeholder="Номер телефона" type="text" class="reg-form-input white-input"> </div>
             <div class="reg-form-line login-form"> 
                <span class="obligatory-input">*</span>
                <img src="../resource/key.svg" alt="Пароль" class="form-emoji">
-                <input id="reg-password" required placeholder="Пароль" type="password" class="reg-form-input input-password" onchange="check_repeat_password(); change_button()"> 
+                <input id="reg-password" required placeholder="Пароль" type="password" class="reg-form-input input-password white-input" onchange="check_repeat_password(); change_button()"> 
                 <button class="password-control" onclick="show_password_login(this)">
                     <img src="../resource/eye-open-brown.svg" alt="">
                 </button>    
@@ -58,7 +55,7 @@
             <div class="reg-form-line login-form"> 
                <span class="obligatory-input">*</span>
                <img src="../resource/key.svg" alt="Повторите пароль" class="form-emoji">
-                <input required id="repeat-password" placeholder="Повторите пароль" type="password" class="reg-form-input input-password" onchange="check_repeat_password(); change_button()"> 
+                <input required id="repeat-password" placeholder="Повторите пароль" type="password" class="reg-form-input input-password white-input" onchange="check_repeat_password(); change_button()"> 
                 <button class="password-control" onclick="show_password_login(this)">
                     <img src="../resource/eye-open-brown.svg" alt="">
                 </button>    
@@ -73,7 +70,7 @@
             </div>
             <div class="obligatory-input-explanation">* Обязательные для заполнения поля</div>
         </div>
-        <button disabled id="reg-in" class="width-button reg-form-button">Зарегистрироватьcя</button>
+        <button disabled id="reg-in" class="width-button reg-form-button orange-button">Зарегистрироватьcя</button>
     </div>
     
     <script src="../js/password.js"></script>

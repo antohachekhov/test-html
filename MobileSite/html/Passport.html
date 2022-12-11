@@ -5,16 +5,26 @@
     <meta name="theme-color" content="#FFF7EA">
     <title>Паспорт</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/forms.css">
     <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
     <link rel="manifest" href="../icon/site.webmanifest"> </head>
 
 <body style="background-color: while">
-    <div class="header header-panel">
-        <div class="header-content">
+    <div class="header header-panel header-with-button">
+        <div class="header-content-left">
             <a href="javascript:history.back()" class="button-back"> <img src="../resource/back-brown.svg" alt="Назад" class="back"> </a>
-            <div class="title">ПАСПОРТ ПИТОМЦА</div>
+            <div class="title">ПАСПОРТ</div>
+        </div>
+        <div class="header-content-right">
+            <label class="header-button">
+               <input type="file" name="file[]" multiple accept="application/pdf" id="pet-form-input-pet-docs">
+                <img src="../resource/plus-doc.svg" alt="">
+            </label>
+            <button class="header-button">
+                <img src="../resource/download-doc.svg" alt="">
+            </button>
         </div>
     </div>
     <div class="content-pdf">

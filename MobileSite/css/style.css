@@ -9,6 +9,7 @@
     --app-light-grey: #D9D9D9;
     --app-pink: #FFA3C4;
     --app-invalid-input: #FFB0B0;
+    --app-red: #FF8383;
     --shadow-header: 0px 20px 50px rgba(0, 0, 0, 0.4);
     --shadow-button: 0px 10px 45px rgba(0, 0, 0, 0.6);
     --shadow-card: 0px 10px 30px rgba(0, 0, 0, 0.7);
@@ -81,6 +82,7 @@ body,
 html {
     margin: 0;
     padding: 0;
+    overscroll-behavior: contain;
 }
 
 a {
@@ -118,13 +120,49 @@ button {
     background-color: var(--app-beige);
 }
 
+.header-with-button {
+    justify-content: space-between;
+    padding-right: 60px;
+}
+
 .header-content {
     height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content:space-between;
+}
+
+.header-content-left {
+    height: 150px;
+    width: 70%;
+    display: flex;
+    align-items: center;
     justify-content: left;
+}
+
+.header-content-right {
+    width: 20%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-button {
+    height: 100px;
+    width: 40%;
+    padding: 0px;
     
+    background: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.header-button > img {
+    width: 80%;
+    height: 100px;
 }
 
 .header-account {
@@ -275,7 +313,6 @@ button {
     height: 100px;
     border: none;
     border-radius: 50px;
-    background-color: var(--app-brown);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -333,6 +370,24 @@ button {
     font-size: 60px;
     font-weight: 600;
     color: var(--app-brown);
+    width: calc(100% - 200px);
+    text-align: center;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: pre;
+    overflow: hidden;
+    
+}
+
+.title-with-wrap {
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 600;
+    color: var(--app-brown);
+    width: calc(100% - 200px);
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .title-center {
@@ -383,7 +438,7 @@ button {
     display: inline-block;
     margin-left: 50px;
     color: white;
-    max-width: 400px;
+    width: 100%;
     padding-top: 50px;
     
 }
@@ -428,6 +483,10 @@ button {
     color: var(--app-orange);
     font-size: 32px;
     text-decoration: underline;
+}
+
+.account-content-card-more-info:focus {
+    color: var(--app-brown);
 }
 
 .card {
@@ -544,10 +603,9 @@ button {
 .width-account-block {
     width: 100%;
     height: 125px;
-    background-color: var(--app-orange);
     border-radius: 50px;
     text-align: left;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px 20px 25px;
     box-sizing: border-box;
     box-shadow: var(--shadow-input);
     display: flex;
@@ -559,9 +617,15 @@ button {
     background-color: var(--app-brown);
 }
 
+.width-account-block-red {
+    background-color: var(--app-red);
+}
+
 .width-account-block-img {
     height: 70px;
-    margin-right: 30px;
+    width: 80px;
+    margin-right: 20px;
+    margin-left: 10px;
     float: left;
 }
 
@@ -592,7 +656,7 @@ button {
     color: var(--app-brown);
 }
 
-.food-card-desprition-line {
+.food-card-description-line {
     width: 100%;
     font-size: 30px;
     margin: 15px 0px;
@@ -650,7 +714,6 @@ button {
 .settings-list-button {
     width: 100%;
     min-height: 100px;
-    background-color: var(--app-brown);
     border-radius: 30px;
     box-shadow: var(--shadow-button);
     color: white;
@@ -700,7 +763,12 @@ button {
     height: 100%;
     position: relative;
     margin-right: 10px;
-} 
+    transition: all 0.1s ease-in-out;
+}
+
+.card-mini:active {
+    transform: scale(1.05, 1.05);
+}
 
 .card-mini-img {
     width: 200px;
@@ -742,7 +810,6 @@ button {
 .mini-button {
     height: 200px;
     width: 200px;
-    background-color: var(--app-brown);
     color: white;
     border-radius: 60px;
     box-shadow: var(--shadow-input);
@@ -756,4 +823,30 @@ button {
 
 .app-settings-list {
     display: flex;
+}
+
+.orange-button {
+    background-color: var(--app-orange);
+    transition: all 0.1s ease-in-out;
+}
+
+.orange-button:active {
+    background-color: #FF7D3F;
+    transform: scale(1.05, 1.05)
+}
+
+.brown-button {
+    background-color: var(--app-brown);
+}
+
+.brown-button:active {
+    background-color: #8C4B25;
+}
+
+.scale-button {
+    transition: all 0.1s ease-in-out;
+}
+
+.scale-button:active {
+    transform: scale(1.05, 1.05);
 }

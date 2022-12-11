@@ -9,40 +9,59 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
-    <link rel="manifest" href="../icon/site.webmanifest"> </head>
-
+    <link rel="manifest" href="../icon/site.webmanifest">
+<script type="module" src="/MobileSite/js/logic.js"></script>
+    
+</head>
 <body style="background-color: #FFF7EA">
     <div class="static-header">
-        <div class="header-back-title">
-            <a href="javascript:history.back()" class="button-back"> <img src="../resource/back-brown.svg" alt="Назад" class="back"></a> <span class="title" style="color: #43210D">НАЗВАНИЕ КОРМА</span> </div>
+        <div class="header-content">
+            <a href="javascript:history.back()" class="button-back"> <img src="../resource/back-brown.svg" alt="Назад" class="back"></a>
+            <span id="food-info-title" class="title" style="color: #43210D">НАЗВАНИЕ КОРМА</span>
+            <a href="./Account.html" class="button-back">
+                <img src="../resource/home.svg" alt="">
+            </a> 
+        </div>
     </div>
     <div class="content-without-header">
         <div class="subtitle">Информация о корме</div>
         <div class="food-info-block">
             <div class="food-info-text">
-                <div class="food-info-line">Название корма</div>
-                <div class="food-info-line">Бренд</div>
-                <div class="food-info-line">Тип корма</div>
-                <div class="food-info-line">Порода</div>
-                <div class="food-info-line">Стерилизованный</div>
+                <div id="food-info-title2" class="food-info-line">Название корма</div>
+                <div id="food-info-brand" class="food-info-line">Бренд</div>
+                <div id="food-info-type" class="food-info-line">Тип корма</div>
+                <div id="food-info-breed" class="food-info-line">Порода</div>
+                <div id="food-info-steril" class="food-info-line"></div>
             </div>
         </div>
         <div class="food-calculation">
             <div class="subtitle">Введите данные для расчёта</div>
             <div class="food-calculation-form">
-                <input type="text" class="reg-form-input" placeholder="Введите название рациона">
-                <input type="text" class="reg-form-input" placeholder="Масса питомца">
-                <select class="reg-form-input">
-                    <option selected hidden>Активность питомца</option>
-                    <option>Низкая</option>
-                    <option>Средняя</option>
-                    <option>Высокая</option>
-                </select>
-                <button class="width-button width-button-text food-form-button"> Расчитать </button>
+                <input id="food-info-input-name" type="text" class="reg-form-input orange-input" placeholder="Введите название рациона">
+                <input id="food-info-input-weight" type="text" class="reg-form-input orange-input" placeholder="Масса питомца">
+                <select id="food-info-input-active" class="reg-form-input orange-input">
+                            <option selected hidden>Активность питомца</option>
+                            <option value="1">Низкая активность</option>
+                            <option value="2">Средняя активность</option>
+                            <option value="3">Высокая активность</option>
+                        </select>
+                <div class="food-calculation-line-with-checkbox">
+                    <div class='toggle-switch-conteiner'>
+                        <label class="switch">
+                        <input id="active-checkbox" type="checkbox" class="reg-form-checkbox" onchange="CheckFood()"> <span class="slider slider-food round"></span> </label>
+                    </div>
+                    <span class="slider-food-text">Рассчитывать автоматически по массе и активности питомца</span>
+                </div>
+                
+                <button id="food-info-count" class="width-button width-button-text food-form-button brown-button scale-button">
+                    Расчитать   
+                </button>
             </div>
             <div class="food-calcutation-result-block">
-                <input type="text" class="reg-form-input" placeholder="Размер суточной порции">
-                <button class="width-button width-button-text food-form-button"> Сохранить </button>
+                <input id="food-info-input-dose" type="text" class="reg-form-input orange-input" placeholder="Размер суточной порции">
+                <button id="food-info-save" class="width-button width-button-text food-form-button brown-button scale-button">
+                    Сохранить   
+                </button>
             </div>
         </div>
     </div>

@@ -24,6 +24,7 @@
     transition: transform 0.4s ease-in-out;
     z-index: 3;
     position: absolute;
+    overscroll-behavior: contain;
 }
 
 .bottom-sheet-close {
@@ -58,6 +59,11 @@
     max-height: 900px;
 }
 
+.delete-pet-panel {
+    height: 100%;
+    max-height: 800px;
+}
+
 .diet-info {
     height: 100%;
     max-height: 1700px;    
@@ -87,4 +93,9 @@
 
 .button-bottom-sheet {
     margin-bottom: 60px;
+}
+
+.delete-pet-panel.open {
+    transform: translateY(0%);
+    z-index: 4;
 }

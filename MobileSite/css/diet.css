@@ -88,6 +88,7 @@
 
 .diet-info-food-card {
     grid-area: food-card;
+    overflow: scroll;
 }
 
 .diet-info-pet-data {
@@ -199,7 +200,15 @@
     margin: 10px 0px 50px 0px;
     width: 100%;
     position: relative;
-    height: 700px;
+    height: 700px; 
+    overflow: scroll;
+}
+
+.table-portions-block1 {
+    margin: 10px 0px 50px 0px;
+    width: 100%;
+    position: relative;
+    height: 200px; 
     overflow: scroll;
 }
 
@@ -235,7 +244,6 @@
     background-color: var(--app-beige);
     border-top: 15px solid white;
     border-bottom: 15px solid white;
-    
 }
 
 .table-value {

@@ -60,21 +60,7 @@ function Request(url, answer) {
       break;
 
     case '/pets_list':
-      //console.log(answer);
-      //console.log("статус = " + answer.status);
-      //console.log("сообщение = " + answer.message);
-      //console.log("время запроса = " + answer.time);
-      // цикл по всем питомцам хозяина
-
-
-
-
-      //console.log("Хозяин питомца : " + user_id);
-      //console.log("Количество питомцев : " + answer.object.length);
       for(let i = 0; i < answer.object.length; i++){
-        //console.log("Питомец №" + (i + 1));
-        //writeOnHtmlPagePetsList(user_id, answer.object[i].pet_name, answer.object[i].pet_age, answer.object[i].breed_id, answer.object[i].photo, i);
-        //console.log("имя питомца = " + answer.object[i].pet_name);
         if (answer.object[i].pet_gender === 1)
           console.log("пол питомца = мужской");
         else
@@ -96,6 +82,9 @@ function Request(url, answer) {
 
     case '/registr':
       break;
+    
+    case 'advice/list':
+      break;
 
     default:
       console.log("Def");
@@ -105,21 +94,22 @@ function Request(url, answer) {
   }
 }
 
+let urlOrigin = new URL(document.URL).origin;
 // функция, отправляющая запрос на поданный url
-function chooseRequest(xhr, method, url, json_body, get_param) {
-  xhr.open(method, 'http://26.109.231.110:8080' + url + get_param, false); //Белый сервак:194.87.95.63 Сашин:26.109.231.110
-  xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+function chooseRequest(xhr, method, url, json_body, get_param, form_type) {
+  xhr.open(method, urlOrigin + url + get_param, false); //Белый сервак:194.87.95.63 Сашин:26.109.231.110
+  if(form_type != null) xhr.setRequestHeader('Content-type', form_type);
    xhr.send(json_body); //отправка тела запроса
-  console.log("3")
+  //console.log("3")
 
-  console.log("2")
+  //console.log("2")
   xhr.onload = function() {
     if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
       //console.log(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
     } else { // если всё прошло гладко, выводим результат
       //console.log(`Готово, получили ${xhr.response}`);
       Request(url, xhr.response);
-    console.log("1")
+    //console.log("1")
     }
   };
   
@@ -134,7 +124,7 @@ function chooseRequest(xhr, method, url, json_body, get_param) {
 
 let json = null;
 let user_id = 1; // Саша = , Ира = 1
-let pet_id = 2; // Попугай = 1, собака = 2 
+//let pet_id = 2; // Попугай = 1, собака = 2 
 let us_log = "ikutuzova@gmail.com"; //"Dribla.com" //"ikutuzova@gmail.com"
 let us_pass = "Ira"; //"1234" //"Ira" 
 
@@ -148,10 +138,12 @@ function prepareRequest(url, object){
     {
         method: "",
         get_param: "",
-        json: ""
+        json: "",
+        form_type: "application/json; charset=utf-8"
     }
 
     // свитч, подготавливающий данные на запрос определенного url
+  
   switch(url) {
     case '/breed/help':
       // запрос-хелпер какие параметры мы подаем на вход
@@ -160,7 +152,7 @@ function prepareRequest(url, object){
       break;
 
     case '/user':
-      preparingRequest.get_param = "?user_id=" + user_id;
+      preparingRequest.get_param = "?user_id=" + object.user_id;
       preparingRequest.method = "GET";
       break;
 
@@ -171,56 +163,235 @@ function prepareRequest(url, object){
 
     case '/autho':
       preparingRequest.json = JSON.stringify({
-        login: us_log,
-        password: us_pass
+        login: object.mail,
+        password: object.password
       });
       preparingRequest.method = "POST";
       break;
 
     case '/registr':
       preparingRequest.json = JSON.stringify({
-        first_name : "Ирина",
-        last_name : "Кутузова",
-        patronymic : "Александровна",
-        nickname : "SunriseDagger",
-        e_mail : "ikutuzova@gmail.com",
-        phone : "888888888",
-        password : "Ira",
+        last_name : object.last_name,
+        first_name : object.first_name,
+        patronymic : object.patronymic,
+        nickname : object.nickname,
+        e_mail : object.mail,
+        phone : object.phone,
+        password : object.password,
         address_id : "" // адрес_id из другой таблицы
       });
-      preparingRequst.method = "POST";
+      preparingRequest.method = "POST";
     /*
     согласие обрабатывается у нас
           (отправка только true, при false кнопка отправки неактивна)*/
       break;
 
     case '/pet':
-      preparingRequest.get_param = "?pet_id=" + pet_id;
+      preparingRequest.get_param = "?pet_id=" + object.pet_id;
       preparingRequest.method = "GET";
       break;
 
     case '/add_pet':
-      preparingRequest.json = JSON.stringify({
+      var formData = new FormData();
+      let js = JSON.stringify({
         user_id : object.user_id,
         pet_name : object.name, //строка
         pet_gender : object.gender, //число - 1 (м), 2 (ж)
         breed_id : object.breed_id, //число - id породы breed_id
         pet_date_of_birth : object.date_of_birth, //date
         pet_weight : object.weight, //число
-        photos : object.photo, //фото
-        documents : object.documents //документы
+        pet_activeness_type : object.active,
+        /*photos : object.photo, //фото
+        documents : object.documents //документы*/
         });
+
+
+      const blobJS = new Blob([js], {
+        type: 'application/json'
+      });
+
+      formData.append("pet", blobJS);
+      formData.append("photo", object.photo);
+      //formData.append("document", "");
+
+      preparingRequest.json = formData;
+      preparingRequest.form_type = null;
       preparingRequest.method = "POST";
+      break;
+
+    case '/pet/change':
+      var formData = new FormData();
+      let js1 = JSON.stringify({
+        pet_id : object.pet_id,
+        pet_name : object.name, //строка
+        pet_gender : object.gender, //число - 1 (м), 2 (ж)
+        breed_id : object.breed_id, //число - id породы breed_id
+        pet_date_of_birth : object.date_of_birth, //date
+        pet_weight : object.weight, //число
+        pet_activeness_type : object.active
+        /*photos : object.photo, //фото
+        documents : object.documents //документы*/
+        });
+
+      const blobJS1 = new Blob([js1], {
+        type: 'application/json'
+      });
+
+      formData.append("pet", blobJS1);
+      formData.append("photo", object.photo);
+      //formData.append("document", "");
+
+      preparingRequest.json = formData;
+      preparingRequest.form_type = null;
+      preparingRequest.method = "POST";
+      break;
+
+    case '/pet/access_user/delete':
+      preparingRequest.json = JSON.stringify({
+        pet_id : object.pet_id,
+        user_nickname : object.nickname
+      });
+      preparingRequest.method = "DELETE";
+      break;
+
+    case '/pet/access_user/add':
+      preparingRequest.json = JSON.stringify({
+        user_nickname: object.nickname,
+        pet_id : object.pet_id
+      });
+      preparingRequest.method = "POST";
+      break;
+
+    case '/pet/access_user/list':
+      preparingRequest.get_param = "?pet_id=" + object.pet_id;
+      preparingRequest.method = "GET";
+      break;
+
+    case '/pet/main_user':
+      preparingRequest.get_param = "?pet_id=" + object.pet_id;
+      preparingRequest.method = "GET";
       break;
 
     case '/breeds_list':
       preparingRequest.method = "GET";
       break;
 
-    default:
-
-
+    case '/pet/ration/list':
+      preparingRequest.get_param = "?pet_id=" + object.pet_id;
+      preparingRequest.method = "GET";
       break;
+    
+    case '/pet/ration':
+      preparingRequest.get_param = "?ration_id=" + object.ration_id;
+      preparingRequest.method = "GET";
+      break;
+
+    case '/pet/ration/portion/list':
+      preparingRequest.get_param = "?ration_id=" + object.ration_id;
+      preparingRequest.method = "GET";
+      break;
+
+    case '/pet/ration/food':
+      preparingRequest.get_param = "?ration_id=" + object.ration_id;
+      preparingRequest.method = "GET";
+      break;
+
+    case '/pet/ration/portion/add':
+      preparingRequest.json = JSON.stringify({
+        diet_id : object.diet_id,
+        portion_size: object.portion_size,
+        portion_time: object.portion_time
+      });
+      preparingRequest.method = "POST";
+      break;
+
+    case '/pet/ration/portion/feed':
+      preparingRequest.json = JSON.stringify({
+        portion_id : object.portion_id,
+        portion_is_feed : object.portion_is_feed
+      });
+      preparingRequest.method = "POST";
+      break;
+
+    case '/pet/ration/portion/change':
+      preparingRequest.json = JSON.stringify({
+        diet_id : object.diet_id,
+        portion_id : object.portion_id,
+        portion_size : object.portion_size,
+        portion_time : object.portion_time
+      });
+      preparingRequest.method = "POST";
+      break;
+
+    case '/pet/ration/portion/delete':
+      preparingRequest.json = JSON.stringify({
+        portion_id : object.portion_id
+      });
+      preparingRequest.method = "DELETE";
+      break;
+
+    case '/pet/ration/delete':
+      preparingRequest.json = JSON.stringify({
+        diet_id : object.diet_id
+      });
+      preparingRequest.method = "DELETE";
+      break;
+
+    case '/food_list':
+      preparingRequest.method = "GET";
+      break;
+
+    case '/food':
+      preparingRequest.get_param = "?food_id=" + object.food_id;
+      preparingRequest.method = "GET";
+      break;
+
+    case '/pet/ration/calculate':
+      preparingRequest.json = JSON.stringify({
+        ration_food_id: object.input_id,
+        ration_pet_weight: object.input_weight,
+        ration_activeness_type : object.input_active
+      });
+      preparingRequest.method = "POST";
+      break;
+
+    case '/pet/ration/add':
+      preparingRequest.json = JSON.stringify({
+        ration_food_id: object.input_id,
+        ration_name : object.input_name,
+        pet_id : object.input_pet_id,
+        ration_pet_weight: object.input_weight,
+        ration_activeness_type : object.input_active,
+        ration_total_size : object.input_calc,
+        ration_auto_calc : object.input_auto
+      });
+      preparingRequest.method = "POST";
+      break;
+    
+    case '/advice/list':
+      preparingRequest.method = "GET";
+      break;
+
+    case '/day_advice':
+      preparingRequest.method = "GET";
+      break;
+
+    case '/user/change/personal_data':
+      preparingRequest.json = JSON.stringify({
+        user_id : object.user_id,
+        last_name : object.last_name,
+        first_name : object.first_name,
+        patronymic : object.patronymic,
+        nickname : object.nickname,
+        e_mail : object.e_mail,
+        phone : object.phone
+      });
+      preparingRequest.method = "POST";
+      break;
+     
+    default:
+      break;
+
   }
 
   return preparingRequest
@@ -231,7 +402,7 @@ export function createRequest(url, object)
 {
     let xhr = new XMLHttpRequest(); // у конструктора нет аргументов
     let request = prepareRequest(url, object);
-    let answer = chooseRequest(xhr, request.method, url, request.json, request.get_param);
+    let answer = chooseRequest(xhr, request.method, url, request.json, request.get_param, request.form_type);
     return answer;
 }
 

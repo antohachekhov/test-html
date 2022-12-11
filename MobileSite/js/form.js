@@ -17,3 +17,35 @@ function change_button() {
         button.disabled = true;
     }
 }
+
+document.getElementById('pet-form-input-pet-docs').addEventListener('change', function(){
+    if( this.value ){
+        document.getElementById('pet-form-uploaded-docs').style.backgroundColor = '#71CA63';
+        document.getElementById('pet-form-unloaded-docs-flag').textContent = '✓';
+    } else { // Если после выбранного тыкнули еще раз, но дальше cancel
+        
+        }
+});
+
+document.querySelector('.reg-form-input-date').addEventListener('change', function(){
+    if( this.value ){
+        document.querySelector('.pet-reg-unit').style.visibility = 'visible';
+    } else {
+        document.querySelector('.pet-reg-unit').style.visibility = 'hidden';
+        }
+});
+
+document.querySelector('.reg-form-input-date').addEventListener('focus', function(){
+    this.placeholder = '';
+    document.querySelector('.pet-reg-unit').style.visibility = 'visible';
+});
+
+document.querySelector('.reg-form-input-date').addEventListener('blur', function(){
+    if (this.value) {
+        document.querySelector('.pet-reg-unit').style.visibility = 'visible';
+    }
+    else {
+        this.placeholder = 'Масса питомца';
+        document.querySelector('.pet-reg-unit').style.visibility = 'hidden';
+    }
+});

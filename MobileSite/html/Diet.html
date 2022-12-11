@@ -8,23 +8,29 @@
     <link rel="stylesheet" href="../css/bottom-sheet.css">
     <link rel="stylesheet" href="../css/diet.css">
 
+
     <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
     <link rel="manifest" href="../icon/site.webmanifest"> </head>
+<script src="/MobileSite/js/bottom-sheet.js"></script>
+<script type="module" src="/MobileSite/js/logic.js"></script>
 
 <body style="background-color: while">
     <div class="header header-panel">
         <div class="header-content">
             <a href="javascript:history.back()" class="button-back"> <img src="../resource/back-brown.svg" alt="Назад" class="back"> </a>
             <div class="title">РАЦИОНЫ ПИТАНИЯ</div>
+            <a href="./Account.html" class="button-back">
+                <img src="../resource/home.svg" alt="">
+            </a>
         </div>
     </div>
     <div class="content">
-        <div class="list-cards">
+        <div id="list-of-diets" class="list-cards">
             <div class="list-card">
                 <button onclick="show_bottom_sheet_diet()" href="#" class="to-diet-info">
-                    <div class="card diet-card">
+                    <div class="card diet-card scale-button">
                         <div class="diet-card-text">
                             <div class="diet-card-title">Название рациона</div>
                             <div class="card-description diet-card-description">
@@ -37,76 +43,31 @@
                     </div>
                 </button>
             </div>
-            <div class="list-card">
-                <button onclick="show_bottom_sheet_diet()" href="#" class="to-diet-info">
-                    <div class="card diet-card">
-                        <div class="diet-card-text">
-                            <div class="diet-card-title">Название рациона</div>
-                            <div class="card-description diet-card-description">
-                                <div class="diet-card-description-line"> <span>Корм:&nbsp;</span><span class="food-name">Название корма</span> </div>
-                                <div class="diet-card-description-line"> <span>Вес питомца:&nbsp;</span><span class="pet-weight">500 кг</span> </div>
-                                <div class="diet-card-description-line"> <span>Активность питомца:&nbsp;</span><span class="pet-activity"><img src="../resource/speed-indicator-middle.svg" alt=""></span> </div>
-                            </div>
-                        </div>
-                        <div class="diet-card-dose-area"> <span class="diet-card-one-dose">20</span> <span>&nbsp;г&nbsp;из&nbsp;</span> <span class="diet-card-sum">50</span> <span>&nbsp;г</span> </div>
-                    </div>
-                </button>
-            </div>
-            <div class="list-card">
-                <button onclick="show_bottom_sheet_diet()" href="#" class="to-diet-info">
-                    <div class="card diet-card">
-                        <div class="diet-card-text">
-                            <div class="diet-card-title">Название рациона</div>
-                            <div class="card-description diet-card-description">
-                                <div class="diet-card-description-line"> <span>Корм:&nbsp;</span><span class="food-name">Название корма</span> </div>
-                                <div class="diet-card-description-line"> <span>Вес питомца:&nbsp;</span><span class="pet-weight">500 кг</span> </div>
-                                <div class="diet-card-description-line"> <span>Активность питомца:&nbsp;</span><span class="pet-activity"><img src="../resource/speed-indicator-high.svg" alt=""></span> </div>
-                            </div>
-                        </div>
-                        <div class="diet-card-dose-area"> <span class="diet-card-one-dose">20</span> <span>&nbsp;г&nbsp;из&nbsp;</span> <span class="diet-card-sum">50</span> <span>&nbsp;г</span> </div>
-                    </div>
-                </button>
-            </div>
-            <div class="list-card">
-                <button onclick="show_bottom_sheet_diet()" href="#" class="to-diet-info">
-                    <div class="card diet-card">
-                        <div class="diet-card-text">
-                            <div class="diet-card-title">Название рациона</div>
-                            <div class="card-description diet-card-description">
-                                <div class="diet-card-description-line"> <span>Корм:&nbsp;</span><span class="food-name">Название корма</span> </div>
-                                <div class="diet-card-description-line"> <span>Вес питомца:&nbsp;</span><span class="pet-weight">500 кг</span> </div>
-                                <div class="diet-card-description-line"> <span>Активность питомца:&nbsp;</span><span class="pet-activity"><img src="../resource/speed-indicator-high.svg" alt=""></span> </div>
-                            </div>
-                        </div>
-                        <div class="diet-card-dose-area"> <span class="diet-card-one-dose">20</span> <span>&nbsp;г&nbsp;из&nbsp;</span> <span class="diet-card-sum">50</span> <span>&nbsp;г</span> </div>
-                    </div>
-                </button>
-            </div>
+        
         </div>
-        <a href="./ChooseFood.html" class="button-new-item">
-            <div class="width-button"> <span class="plus">+</span> </div>
+        <a id="diet-plus" href="./ChooseFood.html" class="button-new-item">
+            <div class="width-button brown-button scale-button"> <span class="plus">+</span> </div>
         </a>
         <div class="dark">
             <div class="bottom-sheet diet-info">
-                <button onclick="hide_bottom_sheet_diet()" class="bottom-sheet-close"> <img src="../resource/arrow.svg" alt="Назад" class="back"> </button>
-                <div class="diet-info-header"> 
+                <button id="hide" href="" onclick="hide_bottom_sheet_diet()" class="bottom-sheet-close"> <img src="../resource/arrow.svg" alt="Назад" class="back"> </button>
+                <div id="diet-info-header" class="diet-info-header"> 
                    <span id="diet-info-title">Название рациона</span>
                     <div class="diet-info-header-buttons">
-                        <button><img src="../resource/delete-diet.svg" alt="Удалить" class="diet-info-header-button-img"></button>
+                        <button id="diet-info-del"><img src="../resource/delete-diet.svg" alt="Удалить" class="diet-info-header-button-img"></button>
                     </div>
                 </div>
                 <div class="diet-grid-description">
-                    <div class="diet-info-food-card diet-info-card">
-                        <div class="diet-info-food-flag"> <img src="../resource/special-food.svg" alt=""> </div>
+                    <div id="diet-info-flag" class="diet-info-food-card diet-info-card">
                         <div class="diet-info-card-title"> Корм </div>
                         <div class="diet-info-card-description">
                             <div class="diet-info-food-card-title">
-                                <div class="diet-info-food-card-title-name">Название&nbsp;корма</div>
-                                <div class="diet-info-food-card-title-brand"> Бренд </div>
+                                <div id="diet-info-name" class="diet-info-food-card-title-name">Название&nbsp;корма</div>
+                                <div id="diet-info-brand" class="diet-info-food-card-title-brand"> Бренд </div>
                             </div>
                             <div class="diet-info-card-description-lines">
-                                <div class="diet-info-card-description-line"> <span>Тип:&nbsp;</span><span>тип корма</span> </div>
-                                <div class="diet-info-card-description-line"> <span>Порода:&nbsp;</span><span>порода</span> </div>
+                                <div id="diet-info-type" class="diet-info-card-description-line"> <span>Тип:&nbsp;</span><span>тип корма</span> </div>
+                                <div id="diet-info-breed" class="diet-info-card-description-line"> <span>Порода:&nbsp;</span><span>порода</span> </div>
                             </div>
                         </div>
                     </div>
@@ -114,23 +75,21 @@
                         <div class="diet-info-card-title"> Параметры </div>
                         <div class="diet-info-card-description">
                             <div class="diet-info-card-description-lines">
-                                <div class="diet-info-card-description-line"> <span>Вес:&nbsp;</span><span>50 кг</span> </div>
-                                <div class="diet-info-card-description-line"> <span>Активность:&nbsp;</span><img src="../resource/speed-indicator-high.svg" alt=""> </div>
+                                <div id="diet-info-pet-weight" class="diet-info-card-description-line"> <span>Вес:&nbsp;</span><span>50 кг</span> </div>
+                                <div id="diet-info-pet-act" class="diet-info-card-description-line"> <span>Активность:&nbsp;</span><img src="../resource/speed-indicator-high.svg" alt=""> </div>
                             </div>
                         </div>
                     </div>
                     <div class="diet-info-daily-size diet-info-card">
                         <div class="diet-info-card-title"> Суточная порция </div>
                         <div class="diet-info-card-description">
-                            <div class="diet-info-daily-size-value"> 100 кг </div>
+                            <div id="diet-info-dose" class="diet-info-daily-size-value"> 100 кг </div>
                         </div>
                     </div>
                 </div>
-                <div class="diet-info-table-diet">Порции:</div>
-                
-                <div class="table-portions-block">
-                    <table class="table-portions">
-                       
+                <div class="diet-info-table-diet">Добавить порцию:</div>
+                <div class="table-portions-block1">
+                    <table class="table-portions"> 
                         <tr class="table-title-line">
                             <td class="table-time-title">Время</td>
                             <td class="table-portion-title">Размер, г</td>
@@ -139,143 +98,32 @@
                         </tr>
                         <tr class="table-line">
                             <td class="table-value">
-                                <input type="time" class="table-value-input" disabled>
+                                <input id="add-time" type="time" class="table-value-input table-value-time">
                             </td>
                             <td class="table-value">
-                                <input type="text" class="table-value-input" placeholder="50" disabled>
-                            </td>
-                            <td class="table-check">
-                                <input type="checkbox">
+                                <input id="add-dose" type="text" class="table-value-input">
                             </td>
                             <td class="table-buttons">
                                 <div class="table-button-block">
-                                    <button 
-                                    data-is-active="false" 
-                                    class="table-edit" onclick="active_inputs(this)"> <img src="../resource/edit.svg" alt=""> </button>
-                                    <button class="table-delete"> <img src="../resource/delete-diet.svg" alt=""> </button>
+                                    <button id="add-portion" class="table-delete"> <img src="../resource/plus-doc.svg" alt=""> </button>
                                 </div>
                             </td>
-                        </tr>
-                        <tr class="table-line">
-                            <td class="table-value">
-                                <input type="time" class="table-value-input table-value-time" disabled>
-                            </td>
-                            <td class="table-value">
-                                <input type="text" class="table-value-input" placeholder="50" disabled>
-                            </td>
-                            <td class="table-check">
-                                <input type="checkbox">
-                            </td>
-                            <td class="table-buttons">
-                                <div class="table-button-block">
-                                    <button 
-                                    data-is-active="false" 
-                                    class="table-edit" onclick="active_inputs(this)"> <img src="../resource/edit.svg" alt=""> </button>
-                                    <button class="table-delete"> <img src="../resource/delete-diet.svg" alt=""> </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="table-line">
-                            <td class="table-value">
-                                <input type="time" class="table-value-input table-value-time" disabled>
-                            </td>
-                            <td class="table-value">
-                                <input type="text" class="table-value-input" placeholder="50" disabled>
-                            </td>
-                            <td class="table-check">
-                                <input type="checkbox">
-                            </td>
-                            <td class="table-buttons">
-                                <div class="table-button-block">
-                                    <button 
-                                    data-is-active="false" 
-                                    class="table-edit" onclick="active_inputs(this)"> <img src="../resource/edit.svg" alt=""> </button>
-                                    <button class="table-delete"> <img src="../resource/delete-diet.svg" alt=""> </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="table-line">
-                            <td class="table-value">
-                                <input type="time" class="table-value-input table-value-time" disabled>
-                            </td>
-                            <td class="table-value">
-                                <input type="text" class="table-value-input" placeholder="50" disabled>
-                            </td>
-                            <td class="table-check">
-                                <input type="checkbox">
-                            </td>
-                            <td class="table-buttons">
-                                <div class="table-button-block">
-                                    <button 
-                                    data-is-active="false" 
-                                    class="table-edit" onclick="active_inputs(this)"> <img src="../resource/edit.svg" alt=""> </button>
-                                    <button class="table-delete"> <img src="../resource/delete-diet.svg" alt=""> </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="table-line">
-                            <td class="table-value">
-                                <input type="time" class="table-value-input table-value-time" disabled>
-                            </td>
-                            <td class="table-value">
-                                <input type="text" class="table-value-input" placeholder="50" disabled>
-                            </td>
-                            <td class="table-check">
-                                <input type="checkbox">
-                            </td>
-                            <td class="table-buttons">
-                                <div class="table-button-block">
-                                    <button 
-                                    data-is-active="false" 
-                                    class="table-edit" onclick="active_inputs(this)"> <img src="../resource/edit.svg" alt=""> </button>
-                                    <button class="table-delete"> <img src="../resource/delete-diet.svg" alt=""> </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="table-line">
-                            <td class="table-value">
-                                <input type="time" class="table-value-input table-value-time" disabled>
-                            </td>
-                            <td class="table-value">
-                                <input type="text" class="table-value-input" placeholder="50" disabled>
-                            </td>
-                            <td class="table-check">
-                                <input type="checkbox">
-                            </td>
-                            <td class="table-buttons">
-                                <div class="table-button-block">
-                                    <button 
-                                    data-is-active="false" 
-                                    class="table-edit" onclick="active_inputs(this)"> <img src="../resource/edit.svg" alt=""> </button>
-                                    <button class="table-delete"> <img src="../resource/delete-diet.svg" alt=""> </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="table-line">
-                            <td class="table-value">
-                                <input type="time" class="table-value-input table-value-time" disabled>
-                            </td>
-                            <td class="table-value">
-                                <input type="text" class="table-value-input" placeholder="50" disabled>
-                            </td>
-                            <td class="table-check">
-                                <input type="checkbox">
-                            </td>
-                            <td class="table-buttons">
-                                <div class="table-button-block">
-                                    <button 
-                                    data-is-active="false" 
-                                    class="table-edit" onclick="active_inputs(this)"> <img src="../resource/edit.svg" alt=""> </button>
-                                    <button class="table-delete"> <img src="../resource/delete-diet.svg" alt=""> </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
+
+                        </tr>      
                     </table>
                 </div>
-                <button class="width-button button-bottom-sheet">
-                    <span class="plus">+</span>
-                </button>
+
+                <div class="diet-info-table-diet">Порции:</div>
+                <div class="table-portions-block">
+                    <table id="table-portions" class="table-portions"> 
+                        <tr class="table-title-line">
+                            <td class="table-time-title">Время</td>
+                            <td class="table-portion-title">Размер, г</td>
+                            <td class="table-check-title"></td>
+                            <td class="table-buttons-title"></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

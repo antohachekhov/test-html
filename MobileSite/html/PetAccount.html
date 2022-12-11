@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
     <link rel="manifest" href="../icon/site.webmanifest">
+    <script type="module" src="/MobileSite/js/logic.js"></script>
 
 </head>
 <body>
@@ -20,14 +21,14 @@
        <img src="../resource/shark.jpg" alt="Фото питомца" id="pet-profile-photo">
    </div>
     <div class="header header-pet-profile">
-        <a href="javascript:history.back()" class="button-back button-back-pet-profile"> <img src="../resource/back-brown.svg" alt="Назад" class="back"></a>
+        <a id="petslist-a" href="javascript:history.back()" class="button-back button-back-pet-profile"> <img src="../resource/back-brown.svg" alt="Назад" class="back"></a>
+        
     </div>
     <div id="pet-profile-panel">
         <div id="pet-profile-panel-header">
             <div class="pet-profile-panel-header-line"> <span id="pet-name">Имя питомца</span>
                 <div id="pet-profile-panel-header-buttons">
                     <button class="pet-profile-panel-header-button" onclick="show_bottom_sheet_pet_form()"><img src="../resource/edit.svg" alt="Редактировать" class="pet-profile-panel-header-button-img"></button>
-                    <button id="pet-share" class="pet-profile-panel-header-button"><img src="../resource/share.svg" alt="Поделиться" class="pet-profile-panel-header-button-img"></button>
                 </div>
             </div>
             <div class="pet-profile-panel-header-line">
@@ -59,20 +60,32 @@
                     <span id="pet-age">11</span>
                 </div>
                 <div class="pet-profile-attribute-name-area">
-                    <span>месяцев</span>
+                    <span>возраст
+                        <br>
+                        в годах
+                    </span>
                 </div>
             </div>
         </div>
-        <a class="width-account-block-link" href="./Passport.html">
-            <div class="width-account-block">
+        <div class="pet-profile-attributes-conteiner">
+           <button class="pet-profile-attribute-conteiner-two">
+               <div class="width-account-block" id="pet-activity-block">
+                   <img id="pet-activity" src="" alt="Паспорт" class="width-account-block-img">
+                <div id="pet-act-text" class="width-account-block-text">Активность не указана</div>
+               </div> 
+           </button>
+            <a class="width-account-block-link pet-profile-attribute-conteiner-two" href="./Passport.html">
+            <div class="width-account-block orange-button">
                 <img src="../resource/passport.svg" alt="Паспорт" class="width-account-block-img">
                 <div class="width-account-block-text">Открыть паспорт</div>
                 <img src="../resource/passport-arrow.svg" alt="" class="width-account-block-arrow">
             </div>
         </a>
+        </div>
+        
         <div class="pet-profile-attributes-conteiner">
             <a href="./MedInfo.html">
-                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links">
+                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links orange-button">
                     <div class="pet-profile-attribute-value-area">
                         <img src="../resource/medical-info.svg" alt="Медицинская информация">
                     </div>
@@ -81,8 +94,8 @@
                     </div>
                 </div>
             </a>
-            <a href="./Diet.html">
-                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links">
+            <a id="diet-for-pet" href="./Diet.html">
+                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links orange-button">
                     <div class="pet-profile-attribute-value-area">
                         <img src="../resource/food.svg" alt="Еда">
                     </div>
@@ -92,7 +105,7 @@
                 </div>
             </a>
             <a href="./Advices.html">
-                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links">
+                <div class="pet-profile-attribute-conteiner pet-profile-attribute-links orange-button">
                     <div class="pet-profile-attribute-value-area">
                         <img src="../resource/advices-button.svg" alt="Уход">
                     </div>
@@ -103,11 +116,17 @@
             </a>
         </div>
         <button class="width-account-block-link" onclick="show_bottom_sheet_share()">
-            <div class="width-account-block width-account-block-brown">
+            <div class="width-account-block width-account-block-brown scale-button">
                 <img src="../resource/shared-access.svg" alt="Паспорт" class="width-account-block-img">
                 <div class="width-account-block-text">Настройки общего доступа</div>
             </div>
-        </button>   
+        </button>  
+        <button class="width-account-block-link" onclick="show_delete_pet()">
+            <div class="width-account-block width-account-block-red scale-button">
+                <img src="../resource/eraser.svg" alt="Паспорт" class="width-account-block-img">
+                <div class="width-account-block-text">Удалить питомца</div>
+            </div>
+        </button>    
     </div>
     
     <div class="dark">
@@ -118,7 +137,7 @@
             <div class="pet-share-form">
                 <div class="pet-owner-block">
                 <span>Этот питомец принадлежит:</span>
-                <span>имя_пользователя</span>
+                <span id="main-user">имя_пользователя</span>
                 </div>
                 <div class="list-users-area">
                     <div class="list-users-title">
@@ -126,102 +145,18 @@
                     </div>
                     
                     <div class="pet-share-new-user-area">
-                        <input type="text" class="pet-share-new-user-input" placeholder="Введите имя пользователя">
-                        <button class="pet-share-new-user-button">
+                        <input id="add-user-for-pet" type="text" class="pet-share-new-user-input" placeholder="Введите имя пользователя">
+                        <button id="button-add-user-for-pet" class="pet-share-new-user-button brown-button">
                             Добавить
                         </button>
                     </div>
-                    <div class="list-users-block">
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
-                        <div class="pet-share-user-block">
-                            <div class="pet-share-user-name">
-                                имя_пользователя
-                            </div>
-                            <button class="pet-share-user-delete">
-                                <img src="../resource/delete-user.svg" alt="">
-                            </button>
-                            
-                        </div>
+                    <div class="pet-share-new-user-area">
+                        <input id="del-user-for-pet" type="text" class="pet-share-new-user-input" placeholder="Введите имя пользователя">
+                        <button id="button-del-user-for-pet" class="pet-share-new-user-button brown-button">
+                            Удалить
+                        </button>
+                    </div>
+                    <div id="list-users-block" class="list-users-block">
                     </div>
                 </div>
             </div>
@@ -234,38 +169,40 @@
             <div class="reg-pet-form">
                 <div class="reg-form-line">
                     <label class="get-photo">
-		   	            <input type="file" name="file[]" multiple accept="image/*">		
-		   	            <div class="get-photo-block"> 
-                           <img src="../resource/shark.jpg" alt="Загрузить изображение" id="pet-form-uploaded-photo"> 
-                        </div>
- 		            </label>
+                            <input id="pet_photo" type="file" name="file[]" multiple accept="image/*">
+                            <div class="get-photo-block"> <img id="photo-img" src="../resource/shark.jpg" alt="Загрузить изображение"> </div>
+                        </label>
                     <div class="pet-reg-name-block">
-                        <input type="text" class="pet-reg-input-name" placeholder="Акула из Икеа"> 
+                        <input type="text" class="pet-reg-input-name" id="edit-name"> 
                     </div>
                 </div>
                 <div class="reg-form-line"> 
                     <img src="../resource/birth.svg" alt="Дата рождения" class="form-emoji">
-                    <input placeholder="01.02.2003" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="pet-reg-date pet-reg-input reg-form-input"> 
+                    <input id="edit-birth" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" onmouseover="(this.type='date')" class="pet-reg-date reg-form-input orange-input"> 
                 </div>
                 <div class="reg-form-line"> 
                     <img src="../resource/dog.svg" alt="Порода" class="form-emoji">
-                    <select name="breed" class="reg-form-input">
-                        <option value="s1" selected>Акула Поролоновая</option>
-                        <option value="s2">Акула Настоящая</option>
-                        <option value="s3">Акула Человекоедящая</option>
-                        <option value="s4">Акула Акульная</option>
-                        <option value="s5">Акула Рыбная</option>
+                    <select id="pet_breed" name="breed" class="reg-form-input orange-input">
                     </select>
                 </div>
                 <div class="reg-form-line"> 
                     <img src="../resource/scales.svg" alt="Масса" class="form-emoji">
-                    <input placeholder="75 кг" type="text" class="pet-reg-input reg-form-input" id="pet-form-uploaded-weight"> 
+                    <input id="edit-weight" type="number" class="reg-form-input orange-input reg-form-input-date">
+                        <div class="pet-reg-unit">кг</div> 
+                </div>
+                <div class="reg-form-line"> 
+                   <img src="../resource/activity.svg" alt="Пол питомца" class="form-emoji">
+                    <select id="edit-activity1" name="activity" class="reg-form-input orange-input">
+                        <option value="1">Низкая активность</option>
+                        <option value="2">Средняя активность</option>
+                        <option value="3">Высокая активность</option>
+                    </select>
                 </div>
                 <div class="reg-form-line"> 
                    <img src="../resource/gender.svg" alt="Пол питомца" class="form-emoji">
-                    <select name="gender" class="reg-form-input">
-                        <option value="s1" selected>Мужской</option>
-                        <option value="s2">Женский</option>
+                    <select id="edit-gender" name="gender" class="reg-form-input orange-input">
+                        <option value="0">Мужской</option>
+                        <option value="1">Женский</option>
                     </select>
                 </div>
                 <div class="reg-form-line"> 
@@ -273,22 +210,30 @@
                     <label class="button-pet-reg-docs">
                         <input type="file" name="file[]" multiple accept="application/pdf" id="pet-form-input-pet-docs">	
                         <div class="pet-reg-input-docs" id="pet-form-uploaded-docs"> 
-                            <span class="plus">+</span> 
+                            <span class="plus" id="pet-form-unloaded-docs-flag">+</span> 
                         </div>
                     </label>
                     <div class="docs-flag-area">Паспорт питомца</div>
                 </div>
                 <div class="reg-form-line">
-                    <button class="width-button width-button-text button-bottom-sheet">
+                    <button id="edit-save" class="width-button width-button-text button-bottom-sheet brown-button scale-button">
                             Сохранить изменения
                     </button>
                 </div>
             </div>
         </div>
+        
+        <div class="bottom-sheet delete-pet-panel">
+            <button onclick="hide_delete_pet()" class="bottom-sheet-close"> <img src="../resource/arrow.svg" alt="Назад" class="back"> </button> <span class="bottom-sheet-title">УДАЛЕНИЕ ПИТОМЦА</span>
+            <div class="delete-pet-text">Вы действительно хотите удалить своего питомца - Акула из Икеа?</div>
+            <button class="width-button width-button-text brown-button scale-button" id="delete-yes">Да</button>
+            <button class="width-button width-button-text orange-button" id="delete-no" onclick="hide_delete_pet()">Нет</button>
+        </div>
     </div>
         
     <script src="../js/bottom-sheet.js"></script>
     <script src="../js/pet-share.js"></script>
+    <script src="../js/form.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,11 @@
-function writeOnHtmlPagePetsList(UserId, PetName, PetAge, PetBreed, PetPhoto, PetId){
+//let UserId = 1
+//let PetName = "Аркаша"
+//let PetAge = 3
+//let PetBreed = "Какаду"
+//let PetPhoto = "https://vetspravka.ru/imgs/blog/127/127/blg60acb726d9c9e6-25026911.jpg"
+//let PetId = 12
+
+export function writeOnHtmlPagePetsList(PetId, PetName, PetAge, PetBreed, PetPhoto, user_id){
     let divItem = document.createElement("div")
     let divCard = document.createElement("div")
     let divCardText = document.createElement("div")
@@ -11,22 +18,21 @@ function writeOnHtmlPagePetsList(UserId, PetName, PetAge, PetBreed, PetPhoto, Pe
     let divPetBreedTitle = document.createElement("div")
     let divPetBreedValue = document.createElement("div")
 
-    divItem.className = "list-item"
-    divItem.id = "pet_" + UserId + "_" + PetId;
+    divItem.className = "list-card"
     //divA in divItem
     let divA = document.createElement("a")
     divA.className = "to-pet-profile"
-    divA.href = "#"
-    //divCard in divA
-    divCard.className = "pet-card"
+    divA.href = "/MobileSite/html/PetAccount.html?pet_id=" + PetId + "&user_id=" + user_id;
+    //divCard in divA#
+    divCard.className = "card"
     let divCardImg = document.createElement("img")
-    divCardImg.className = "pet-card-image"
+    divCardImg.className = "card-image"
     if(PetPhoto == "" || PetPhoto == null)
      {
      divCardImg.src = "/MobileSite/resource/img.png"
      }
     else {
-    divCardImg.src = PetPhoto //фото Ирочки
+        divCardImg.src = `data:image/*;base64,${PetPhoto}`
     }
 
     //divCardText in divCard
@@ -75,63 +81,24 @@ function writeOnHtmlPagePetsList(UserId, PetName, PetAge, PetBreed, PetPhoto, Pe
     divItem.appendChild(divA)
     //search and add in pets_list
     document.getElementById("list_pets").appendChild(divItem)
-    //move plus to end
-    document.getElementById("list_pets").appendChild(document.getElementById("plus"))
 }
 
-function showListOfPets(user, pets_list)
+export function showListOfPets(pets_list, user_id)
 {
- let count_of_pets = pets_list.object.length;
+    let count_of_pets = pets_list.length;
 
     for(let i = 0; i < count_of_pets; i++){
-        writeOnHtmlPagePetsList(user.user_id, pets_list.object[i].pet_name, pets_list.object[i].pet_age, pets_list.object[i].breed_id, pets_list.object[i].photo, i);
+        writeOnHtmlPagePetsList(pets_list[i].pet_id, pets_list[i].pet_name, pets_list[i].pet_age, pets_list[i].breed_name, pets_list[i].photo, user_id);
     }
 }
 
-import { createRequest } from './klient.js';
+export function addBreeds(breeds){
+    let count_of_breeds = breeds.length;
 
-let url = new URL(document.URL)
-let pets_list
-document.addEventListener("DOMContentLoaded", () => {
-
-    let user = {
-        user_id: url.searchParams.get("user_id")
-    };
-
-    pets_list = createRequest("/pets_list", user);
-    pets_list = JSON.parse(pets_list);
-
-    showListOfPets(user, pets_list)
-
-
-});
-
-document.getElementById("reg").onclick = function(){
-
-                                         let pet =
-                                         {
-                                            user_id : url.searchParams.get("user_id"),
-                                            name: document.getElementById("pet_name").value,
-                                            gender: document.getElementById("pet_gender").selectedIndex,
-                                            date_of_birth: document.getElementById("pet_date_of_birth").value,
-                                            age:"",
-                                            weight: "",
-                                            breed_id: 1,
-                                            photo: "",
-                                            documents: "",
-                                            id:""
-                                         }
-
-                                         let newPet = createRequest("/add_pet", pet) // Здесь Саша вернет id и возраст потом как нибудь
-                                         newPet = JSON.parse(newPet);
-                                         alert(newPet)
-
-                                         pet.name = newPet.object.pet_name;
-                                         pet.gender = newPet.object.pet_gender;
-                                         pet.age = newPet.object.pet_age;
-                                         pet.breed_name = newPet.object.breed_name;
-                                         pet.photo = newPet.object.photo;
-
-                                         writeOnHtmlPagePetsList(pet.user_id, pet.name, pet.age, pet.breed_name, pet.photo, pet.id)
-                                       }
-
+    for(let i = 0; i < count_of_breeds; i++){
+        let optItem = document.createElement("option");
+        optItem.value = breeds[i].breed_name;
+        optItem.textContent = breeds[i].breed_name;
+        document.getElementById("pet_breed").appendChild(optItem)
+    }
+}

@@ -9,86 +9,43 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
     <link rel="manifest" href="../icon/site.webmanifest"> </head>
+<script type="module" src="/MobileSite/js/logic.js"></script>
 
 <body style="background-color: while">
     <div class="header header-panel">
         <div class="header-content">
             <a href="javascript:history.back()" class="button-back"> <img src="../resource/back-brown.svg" alt="Назад" class="back"> </a>
             <div class="title">ВЫБЕРИТЕ КОРМ</div>
+            <a href="./Account.html" class="button-back">
+                <img src="../resource/home.svg" alt="">
+            </a>
         </div>
     </div>
     <div class="content">
-        <div class="list-cards">
+        <div id="list-of-food" class="list-cards">
             <div class="list-card">
                 <a href="FoodInfo.html" class="choosing-food">
-                    <div class="food-card">
+                    <div class="food-card scale-button">
                         <div class="food-special-flag">
                             <img src="../resource/special-food.svg" alt="">
                         </div>
                         <div class="food-card-text">
                             <div class="food-card-title">Тестовый</div>
                             <div class="card-description">
-                                <div class="food-card-desprition-line">
+                                <div class="food-card-description-line">
                                     <span>Бренд:&nbsp;</span><span class="food-card-brand-name">Надо будет удалить</span>
                                 </div>
-                                <div class="food-card-desprition-line">
+                                <div class="food-card-description-line">
                                     <span>Возраст:&nbsp;</span><span class="food-card-age">999999</span>
                                 </div>
 
-                                <div class="food-card-desprition-line">
+                                <div class="food-card-description-line">
                                     <span>Тип:&nbsp;</span><span class="food-card-type">тип корма</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="list-card">
-                <button href="#" class="choosing-food">
-                    <div class="food-card">
-                        <div class="food-card-text">
-                            <div class="food-card-title">Название корма</div>
-                            <div class="card-description">
-                                <div class="food-card-desprition-line">
-                                    <span>Бренд:&nbsp;</span><span class="food-card-brand-name">Название бренда</span>
-                                </div>
-                                <div class="food-card-desprition-line">
-                                    <span>Возраст:&nbsp;</span><span class="food-card-age">999999</span>
-                                </div>
-                                <div class="food-card-desprition-line">
-                                    <span>Порода:&nbsp;</span><span class="food-card-breed">Порода</span>
-                                </div>
-                                <div class="food-card-desprition-line">
-                                    <span>Тип:&nbsp;</span><span class="food-card-type">тип корма</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </button>
-            </div>
-            <div class="list-card">
-                <button href="#" class="choosing-food">
-                    <div class="food-card">
-                        <div class="food-special-flag">
-                            <img src="../resource/special-food.svg" alt="">
-                        </div>
-                        <div class="food-card-text">
-                            <div class="food-card-title">Название корма</div>
-                            <div class="card-description">
-                                <div class="food-card-desprition-line">
-                                    <span>Бренд:&nbsp;</span><span class="food-card-brand-name">Название бренда</span>
-                                </div>
-                                <div class="food-card-desprition-line">
-                                    <span>Возраст:&nbsp;</span><span class="food-card-age">999999</span>
-                                </div>
-
-                                <div class="food-card-desprition-line">
-                                    <span>Тип:&nbsp;</span><span class="food-card-type">тип корма</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </button>
             </div>
         </div>
     </div>

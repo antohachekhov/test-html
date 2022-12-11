@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
     <link rel="manifest" href="../icon/site.webmanifest">
+    <script type="module" src="/MobileSite/js/logic.js"></script>
     
 </head>
 <body style="background-color: #43210D">
@@ -24,28 +25,24 @@
         <div class="reg-form">
             <div class="personal-data-form-line">
                 <img src="../resource/surname.svg" alt="Фамилия" class="form-emoji">
-                <input placeholder="Фамилия" type="text" class="personal-data-form"> 
+                <input id="pd_lastname" placeholder="Фамилия" type="text" class="personal-data-form"> 
             </div>
             <div class="personal-data-form-line">
                 <img src="../resource/name.svg" alt="Имя" class="form-emoji">
-                <input placeholder="Имя" type="text" class="personal-data-form"> 
+                <input id="pd_firstname" placeholder="Имя" type="text" class="personal-data-form"> 
             </div>
             <div class="personal-data-form-line">
                 <img src="../resource/patronymic.svg" alt="Отчество" class="form-emoji">
-                <input placeholder="Отчество" type="text" class="personal-data-form"> 
+                <input id="pd_pathr" placeholder="Отчество" type="text" class="personal-data-form"> 
             </div>
             <div class="personal-data-form-line"> <img src="../resource/login.svg" alt="Логин" class="form-emoji">
-                <input placeholder="Никнейм" type="text" class="personal-data-form"> </div>
+                <input id="pd_nickname" placeholder="Никнейм" type="text" class="personal-data-form"> </div>
             <div class="personal-data-form-line"> <img src="../resource/e-mail.svg" alt="Почта" class="form-emoji">
-                <input placeholder="E-mail" type="email" class="personal-data-form"> </div>
-            <!--
-               <div class="personal-data-form-line"> <img src="../resource/birth.svg" alt="Дата рождения" class="form-emoji">
-                <input placeholder="Дата рождения" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" class="personal-data-form pet-reg-date"> </div>
-            -->
+                <input id="pd_mail" placeholder="E-mail" type="email" class="personal-data-form"> </div>
             <div class="personal-data-form-line"> <img src="../resource/phone.svg" alt="Телефон" class="form-emoji">
-                <input placeholder="Номер телефона" type="text" class="personal-data-form"> </div>
+                <input id="pd_phone" placeholder="Номер телефона" type="text" class="personal-data-form"> </div>
         </div>
-        <button class="width-button reg-form-button">Сохранить изменения</button>
+        <button id="save-change" class="width-button reg-form-button orange-button">Сохранить изменения</button>
     </div>
 </body>
 

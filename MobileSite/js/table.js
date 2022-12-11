@@ -23,7 +23,4 @@ function active_inputs(el) {
             input.style = "border-bottom: none";
         }
     }
-    
-    
-
 }
