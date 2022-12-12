@@ -828,11 +828,18 @@ button {
 .orange-button {
     background-color: var(--app-orange);
     transition: all 0.1s ease-in-out;
+     -webkit-transition: -webkit-transform 0.1s ease-in-out;
+    -moz-transition: transform 0.1s ease-in-out;
+    -o-transition: transform 0.1s ease-in-out;
 }
 
 .orange-button:active {
     background-color: #FF7D3F;
-    transform: scale(1.05, 1.05)
+    transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    -ms-transform: scale(1.05, 1.05);
+    -o-transform: scale(1.05, 1.05);
 }
 
 .brown-button {
